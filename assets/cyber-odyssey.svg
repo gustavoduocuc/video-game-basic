@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="400" viewBox="0 0 300 400">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="400" fill="url(#bg1)"/>
+  <rect x="20" y="260" width="60" height="120" fill="#4c1d95"/>
+  <rect x="90" y="200" width="60" height="180" fill="#6d28d9"/>
+  <rect x="160" y="230" width="60" height="150" fill="#4c1d95"/>
+  <rect x="230" y="180" width="50" height="200" fill="#6d28d9"/>
+  <circle cx="150" cy="120" r="35" fill="#f472b6"/>
+  <rect x="130" y="150" width="40" height="80" fill="#22d3ee"/>
+  <circle cx="60" cy="60" r="3" fill="#e0e7ff"/>
+  <circle cx="220" cy="40" r="2" fill="#e0e7ff"/>
+  <circle cx="260" cy="90" r="2.5" fill="#e0e7ff"/>
+  <circle cx="40" cy="120" r="2" fill="#e0e7ff"/>
+  <text x="150" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc" text-anchor="middle">CYBER ODYSSEY 2077</text>
+</svg>

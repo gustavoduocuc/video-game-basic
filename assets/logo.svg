@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="60" viewBox="0 0 120 60">
+  <rect width="120" height="60" rx="10" fill="#1f2937"/>
+  <circle cx="30" cy="30" r="12" fill="none" stroke="#22d3ee" stroke-width="4"/>
+  <circle cx="30" cy="30" r="4" fill="#22d3ee"/>
+  <rect x="48" y="24" width="14" height="4" rx="2" fill="#22d3ee"/>
+  <rect x="53" y="19" width="4" height="14" rx="2" fill="#22d3ee"/>
+  <circle cx="90" cy="24" r="5" fill="#f472b6"/>
+  <circle cx="102" cy="36" r="5" fill="#f472b6"/>
+  <text x="60" y="52" font-family="Arial, sans-serif" font-size="10" fill="#e5e7eb" text-anchor="middle">GameVault</text>
+</svg>
