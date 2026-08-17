@@ -21,3 +21,7 @@ La página usa `<header>`, `<nav>`, `<main>`, `<section>`, `<article>` y `<foote
 
 ## Validación estructura HTML
 HTML Validado con https://jsonformatter.org/html-validator 
+
+## Cómo se ve
+<img width="1086" height="1232" alt="Screenshot 2026-08-17 at 3 40 04 PM" src="https://github.com/user-attachments/assets/633a43c8-13e3-48df-91da-6136937173e1" />
+<img width="1082" height="1232" alt="Screenshot 2026-08-17 at 3 40 28 PM" src="https://github.com/user-attachments/assets/1cbe7bab-422c-43d0-88f8-94dfcda1f35d" />
