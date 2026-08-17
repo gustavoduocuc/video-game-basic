@@ -18,3 +18,6 @@ open index.html
 ## Estructura semántica
 
 La página usa `<header>`, `<nav>`, `<main>`, `<section>`, `<article>` y `<footer>` para organizar el contenido, con una jerarquía de encabezados `<h1>`–`<h3>`, listas para categorías y ofertas, enlaces descriptivos e imágenes con texto alternativo.
+
+## Validación estructura HTML
+HTML Validado con https://jsonformatter.org/html-validator 
