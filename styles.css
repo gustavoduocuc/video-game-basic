@@ -1,0 +1,374 @@
+/* =========================================================
+   GameVault — Hoja de estilos principal
+   Índice:
+   1. Reset y modelo de cajas global
+   2. Variables (colores y tipografía)
+   3. Tipografía base y jerarquía
+   4. Header y navegación (#site-header)
+   5. Layout general de secciones (.section)
+   6. Catálogo de productos (.product-grid / .product-card)
+   7. Categorías (.category-list)
+   8. Ofertas (.offers-list)
+   9. Footer (.site-footer)
+   ========================================================= */
+
+/* -------------------- 1. Reset y box model -------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------------- 2. Variables -------------------- */
+:root {
+  --color-bg: #0f1115;
+  --color-bg-alt: #171a21;
+  --color-surface: #1f232c;
+  --color-primary: #7c4dff;
+  --color-primary-dark: #5a32d6;
+  --color-accent: #00e5a0;
+  --color-text: #eef0f4;
+  --color-text-muted: #a4a9b4;
+  --color-border: #2c313c;
+
+  --font-heading: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --radius: 8px;
+  --spacing-section: 3rem;
+}
+
+/* -------------------- 3. Tipografía base -------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* -------------------- 4. Header y navegación -------------------- */
+.site-header {
+  background-color: var(--color-bg-alt);
+  color: var(--color-text);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header .logo {
+  margin: 0 auto 1rem;
+}
+
+.site-header p {
+  max-width: 40rem;
+  margin: 0 auto 1.5rem;
+}
+
+.main-nav .nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.main-nav .nav-list li a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.main-nav .nav-list li a:hover,
+.main-nav .nav-list li a:focus-visible {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* -------------------- 5. Layout general de secciones -------------------- */
+main {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: var(--spacing-section) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+/* -------------------- 6. Catálogo de productos -------------------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.product-card {
+  position: relative;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.product-card img {
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+
+.product-card .price {
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-top: auto;
+}
+
+.product-card .btn {
+  margin-top: 0.75rem;
+  display: inline-block;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+
+.product-card .btn:hover,
+.product-card .btn:focus-visible {
+  background-color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+/* alterna un leve tono de fondo en las tarjetas pares */
+.product-card:nth-child(even) {
+  background-color: var(--color-bg-alt);
+}
+
+/* destaca la primera tarjeta como "más vendida" con una etiqueta, no con un borde ambiguo */
+.product-card:first-child::after {
+  content: "Más vendido";
+  position: absolute;
+  top: -0.65rem;
+  right: 1rem;
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+/* -------------------- 7. Categorías -------------------- */
+.category-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.category-list li {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background-color: var(--color-surface);
+}
+
+.category-list li a {
+  display: block;
+  padding: 0.5rem 1.25rem;
+  color: var(--color-text);
+}
+
+.category-list li a:hover,
+.category-list li a:focus-visible {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+/* alterna el borde cada 3 ítems para dar ritmo visual, sin usar el color de acento */
+.category-list li:nth-child(3n + 1) {
+  border-color: var(--color-primary);
+}
+
+/* -------------------- 8. Ofertas -------------------- */
+.offers-list {
+  list-style: none;
+  counter-reset: offer;
+  margin-top: 1rem;
+  max-width: 40rem;
+}
+
+.offers-list li {
+  counter-increment: offer;
+  position: relative;
+  padding: 0.9rem 1rem 0.9rem 3rem;
+  margin-bottom: 0.75rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+}
+
+.offers-list li::before {
+  content: counter(offer);
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* destaca la oferta con mayor descuento con una etiqueta de texto, no con un borde ambiguo */
+.offers-list li:first-child::after {
+  content: "Mejor oferta";
+  display: inline-block;
+  margin-left: 0.75rem;
+  vertical-align: middle;
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+/* -------------------- 9. Footer -------------------- */
+.site-footer {
+  background-color: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
+  padding: var(--spacing-section) 1.5rem;
+  text-align: center;
+}
+
+.site-footer h2 {
+  border-bottom: none;
+}
+
+.site-footer p {
+  max-width: 40rem;
+  margin: 0 auto 1.5rem;
+}
+
+.social-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-list li a {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+}
+
+.social-list li a:hover,
+.social-list li a:focus-visible {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.site-footer > p:last-child {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 40rem) {
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  .section {
+    padding: 2rem 0;
+  }
+}
