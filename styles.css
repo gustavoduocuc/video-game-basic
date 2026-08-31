@@ -23,15 +23,15 @@
 
 /* -------------------- 2. Variables -------------------- */
 :root {
-  --color-bg: #0f1115;
-  --color-bg-alt: #171a21;
-  --color-surface: #1f232c;
-  --color-primary: #7c4dff;
-  --color-primary-dark: #5a32d6;
-  --color-accent: #00e5a0;
-  --color-text: #eef0f4;
-  --color-text-muted: #a4a9b4;
-  --color-border: #2c313c;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f9fafb;
+  --color-surface: #ffffff;
+  --color-primary: #4f46e5;
+  --color-primary-dark: #4338ca;
+  --color-accent: #4f46e5;
+  --color-text: #111827;
+  --color-text-muted: #4b5563;
+  --color-border: #e5e7eb;
 
   --font-heading: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-body: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -104,20 +104,38 @@ img {
 
 /* -------------------- 4. Header y navegación -------------------- */
 .site-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "logo title nav"
+    "logo tagline nav";
+  align-items: center;
+  column-gap: 1.5rem;
   background-color: var(--color-bg-alt);
   color: var(--color-text);
   padding: 2rem 1.5rem;
-  text-align: center;
+  text-align: left;
   border-bottom: 1px solid var(--color-border);
 }
 
 .site-header .logo {
-  margin: 0 auto 1rem;
+  grid-area: logo;
+  margin: 0;
+}
+
+.site-header h1 {
+  grid-area: title;
 }
 
 .site-header p {
+  grid-area: tagline;
   max-width: 40rem;
-  margin: 0 auto 1.5rem;
+  margin: 0;
+}
+
+.main-nav {
+  grid-area: nav;
+  align-self: center;
 }
 
 .main-nav .nav-list {
@@ -161,6 +179,23 @@ main {
   border-bottom: none;
 }
 
+/* Selectores de ID: separación al hacer scroll con anclas + acento visual en Ofertas */
+#catalogo,
+#categorias,
+#ofertas,
+#contacto,
+#cyber-odyssey,
+#reino-de-sombras,
+#velocidad-extrema,
+#nexcore-x,
+#progrip {
+  scroll-margin-top: 1.5rem;
+}
+
+#ofertas {
+  background-color: var(--color-bg-alt);
+}
+
 /* -------------------- 6. Catálogo de productos -------------------- */
 .product-grid {
   display: grid;
@@ -182,7 +217,22 @@ main {
 
 .product-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 20px rgba(17, 24, 39, 0.12);
+}
+
+/* resalta la tarjeta cuando se llega desde un enlace de categoría (#id) */
+.product-card:target {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.product-card .category-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+  margin-bottom: 0.35rem;
 }
 
 .product-card img {
@@ -242,27 +292,22 @@ main {
   margin-top: 1rem;
 }
 
-.category-list li {
+.category-list li a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
   border: 1px solid var(--color-border);
   border-radius: 999px;
   background-color: var(--color-surface);
-}
-
-.category-list li a {
-  display: block;
-  padding: 0.5rem 1.25rem;
   color: var(--color-text);
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 .category-list li a:hover,
 .category-list li a:focus-visible {
+  border-color: var(--color-primary);
   color: var(--color-accent);
   text-decoration: none;
-}
-
-/* alterna el borde cada 3 ítems para dar ritmo visual, sin usar el color de acento */
-.category-list li:nth-child(3n + 1) {
-  border-color: var(--color-primary);
 }
 
 /* -------------------- 8. Ofertas -------------------- */
@@ -319,28 +364,40 @@ main {
 
 /* -------------------- 9. Footer -------------------- */
 .site-footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "heading social"
+    "text social"
+    "copyright copyright";
+  align-items: start;
+  column-gap: 2rem;
   background-color: var(--color-bg-alt);
   border-top: 1px solid var(--color-border);
   padding: var(--spacing-section) 1.5rem;
-  text-align: center;
+  text-align: left;
 }
 
 .site-footer h2 {
+  grid-area: heading;
   border-bottom: none;
 }
 
-.site-footer p {
+.site-footer > p:first-of-type {
+  grid-area: text;
   max-width: 40rem;
-  margin: 0 auto 1.5rem;
+  margin: 0;
 }
 
 .social-list {
+  grid-area: social;
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  justify-self: end;
+  margin-bottom: 0;
 }
 
 .social-list li a {
@@ -358,17 +415,94 @@ main {
 }
 
 .site-footer > p:last-child {
+  grid-area: copyright;
   color: var(--color-text-muted);
   font-size: 0.85rem;
+  text-align: center;
+  margin-top: 1.5rem;
 }
 
-/* -------------------- Responsive -------------------- */
-@media (max-width: 40rem) {
+/* -------------------- Responsive: Tablet -------------------- */
+@media (max-width: 48rem) {
+  .site-header {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "logo"
+      "title"
+      "tagline"
+      "nav";
+    text-align: center;
+    justify-items: center;
+  }
+
+  .site-header p {
+    margin: 0 auto;
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "heading"
+      "text"
+      "social"
+      "copyright";
+    text-align: center;
+    justify-items: center;
+  }
+
+  .site-footer > p:first-of-type {
+    margin: 0 auto;
+  }
+
+  .social-list {
+    justify-content: center;
+    justify-self: center;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   h1 {
-    font-size: 1.75rem;
+    font-size: 1.9rem;
   }
 
   .section {
-    padding: 2rem 0;
+    padding: 2.25rem 0;
+  }
+}
+
+/* -------------------- Responsive: Mobile -------------------- */
+@media (max-width: 30rem) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-nav .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .main-nav .nav-list li a {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .section {
+    padding: 1.75rem 0;
+  }
+}
+
+/* -------------------- Responsive: Desktop grande -------------------- */
+@media (min-width: 64rem) {
+  main {
+    padding: 0 2rem;
+  }
+
+  .product-grid {
+    gap: 2rem;
   }
 }
