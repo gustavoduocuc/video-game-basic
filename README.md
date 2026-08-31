@@ -32,14 +32,15 @@ HTML Validado con https://jsonformatter.org/html-validator
 
 ## Cómo se ve
 ### Desktop
-<img width="1322" height="1233" alt="Screenshot 2026-08-24 at 9 21 07 PM" src="https://github.com/user-attachments/assets/cba52bee-33c7-4bf9-ad8d-4f7360af75f9" />
-<img width="1324" height="1074" alt="Screenshot 2026-08-24 at 9 21 21 PM" src="https://github.com/user-attachments/assets/18b76123-ab1f-4ac2-8f55-70b5072cd480" />
+<img width="1293" height="1298" alt="desktop-1" src="https://github.com/user-attachments/assets/5dff6505-0fea-45d7-84ab-5802bc3e80db" />
+<img width="1292" height="1300" alt="desktop-2" src="https://github.com/user-attachments/assets/d6e38d4b-a648-4f1f-a2ae-55a3c0edb60a" />
 
 ### Tablet
-<img width="876" height="1136" alt="Screenshot 2026-08-24 at 9 22 23 PM" src="https://github.com/user-attachments/assets/98aaf76e-29eb-48d0-848d-ba42bcb7e1a2" />
-<img width="866" height="998" alt="Screenshot 2026-08-24 at 9 22 32 PM" src="https://github.com/user-attachments/assets/94301e28-b89c-446b-89d9-7cbb55671c37" />
+<img width="910" height="1272" alt="tablet-1" src="https://github.com/user-attachments/assets/77de7eae-ded9-4aa5-a0ff-1ae5f8aea957" />
+<img width="908" height="1273" alt="tablet-2" src="https://github.com/user-attachments/assets/9ed696a3-935f-446b-904a-04d22da2c045" />
 
 ### Mobile
-<img width="512" height="1137" alt="Screenshot 2026-08-24 at 9 22 58 PM" src="https://github.com/user-attachments/assets/163cd8c8-9f89-4c05-a9e5-1c2c29530c94" />
-<img width="511" height="1143" alt="Screenshot 2026-08-24 at 9 23 15 PM" src="https://github.com/user-attachments/assets/075119c3-a412-4d62-8023-f661cbad563b" />
-<img width="507" height="1111" alt="Screenshot 2026-08-24 at 9 23 25 PM" src="https://github.com/user-attachments/assets/4884a975-ab34-4bbd-86a7-a61d0f2e84fb" />
+<img width="664" height="1002" alt="phone-1" src="https://github.com/user-attachments/assets/a0120a05-f400-4404-be1d-80d5667cf70c" />
+<img width="635" height="1002" alt="phone-2" src="https://github.com/user-attachments/assets/13dd8d26-3877-4f3e-9f98-2c31bb7bed10" />
+<img width="622" height="999" alt="phone-3" src="https://github.com/user-attachments/assets/dfb24fbd-a8de-4c1b-8df8-5de2fd534045" />
+<img width="625" height="1017" alt="phone-4" src="https://github.com/user-attachments/assets/0b3b82f4-d831-4053-b1cd-24cc769092d9" />
