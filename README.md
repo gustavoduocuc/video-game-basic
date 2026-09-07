@@ -1,36 +1,52 @@
 # GameVault
 
-Estructura de página principal para una tienda de videojuegos, construida con HTML semántico y estilada con CSS externo.
+Tienda online de videojuegos, consolas y accesorios. Página estática construida con HTML semántico, CSS propio y **Bootstrap 5**.
+
+## Sitio publicado
+
+**GitHub Pages:** [https://gustavoduocuc.github.io/video-game-basic/](https://gustavoduocuc.github.io/video-game-basic/)
+
+## Tecnologías
+
+- HTML5 semántico (`header`, `nav`, `main`, `section`, `article`, `footer`)
+- CSS3 con variables personalizadas (tema GameVault)
+- **Bootstrap 5.3.8** vía CDN (jsDelivr)
+  - Navbar responsiva con colapso (hamburguesa)
+  - Carousel con autoplay, indicadores y controles
+  - Sistema de grillas (`container` / `row` / `col-*`)
+  - Cards para el catálogo de productos
 
 ## Contenido
 
-- `index.html` — página principal: header con logo y navegación, catálogo de productos, categorías, ofertas y footer de contacto.
-- `styles.css` — hoja de estilos externa enlazada desde el `<head>`: modelo de cajas, colores, tipografía y selectores avanzados.
-- `assets/` — imágenes SVG del logo y de las portadas de los productos.
+| Archivo / carpeta | Descripción |
+|-------------------|-------------|
+| `index.html` | Página principal: navbar, carrusel, catálogo, categorías, ofertas y footer |
+| `styles.css` | Overrides del tema y estilos propios (carga después de Bootstrap) |
+| `assets/` | Imágenes SVG del logo y portadas de productos |
 
-## Uso
+## Uso local
 
-Abrir `index.html` directamente en el navegador, sin necesidad de servidor ni instalación:
+Abrir `index.html` directamente en el navegador (no requiere servidor ni instalación):
 
 ```bash
 open index.html
 ```
 
+Se necesita conexión a internet la primera vez para cargar Bootstrap desde el CDN.
+
+## Componentes Bootstrap usados
+
+1. **Navbar** (`navbar-expand-lg` + `navbar-toggler`): colapsa bajo 992px.
+2. **Carousel** (`data-bs-ride="carousel"`, `data-bs-interval="5000"`): juegos destacados cada 5 s.
+3. **Grid**: catálogo en `col-12 col-sm-6 col-lg-4`; categorías en `col-6 col-md-4 col-lg`.
+4. **Cards**: productos con altura uniforme (`h-100`) y botones `btn-primary`.
+
 ## Estructura semántica
 
-La página usa `<header>`, `<nav>`, `<main>`, `<section>`, `<article>` y `<footer>` para organizar el contenido, con una jerarquía de encabezados `<h1>`–`<h3>`, listas para categorías y ofertas, enlaces descriptivos e imágenes con texto alternativo.
-
-## Estilos (`styles.css`)
-
-- **Modelo de cajas**: `box-sizing: border-box` global; cada tarjeta de producto, chip de categoría e ítem de oferta usa `padding`, `border` y `margin` consistentes para evitar que el contenido se vea amontonado o desbordado.
-- **Colores y tipografía**: paleta definida con variables CSS (`:root`), fondo oscuro con acentos morado y verde; jerarquía tipográfica clara entre `h1`, `h2`, `h3` y texto de párrafo.
-- **Selectores avanzados**: clases reutilizables (`.product-card`, `.category-list`, `.offers-list`, etc.), IDs únicos por sección, y selectores `:nth-child()`, `:first-child`, `:hover`/`:focus-visible` y `::before`/`::after` para personalizar tarjetas de producto, categorías y ofertas sin depender de estilos en línea.
-- Estados destacados (producto más vendido, mejor oferta) se comunican con etiquetas de texto (`::after` con contenido), no con bordes de color que pudieran confundirse con un estado de selección/foco.
-
-## Validación estructura HTML
-HTML Validado con https://jsonformatter.org/html-validator 
+La página usa una jerarquía de encabezados `<h1>`–`<h3>`, listas para ofertas, enlaces descriptivos e imágenes con texto alternativo.
 
 ## Cómo se ve
+
 ### Desktop
 <img width="1293" height="1298" alt="desktop-1" src="https://github.com/user-attachments/assets/5dff6505-0fea-45d7-84ab-5802bc3e80db" />
 <img width="1292" height="1300" alt="desktop-2" src="https://github.com/user-attachments/assets/d6e38d4b-a648-4f1f-a2ae-55a3c0edb60a" />
@@ -44,3 +60,7 @@ HTML Validado con https://jsonformatter.org/html-validator
 <img width="635" height="1002" alt="phone-2" src="https://github.com/user-attachments/assets/13dd8d26-3877-4f3e-9f98-2c31bb7bed10" />
 <img width="622" height="999" alt="phone-3" src="https://github.com/user-attachments/assets/dfb24fbd-a8de-4c1b-8df8-5de2fd534045" />
 <img width="625" height="1017" alt="phone-4" src="https://github.com/user-attachments/assets/0b3b82f4-d831-4053-b1cd-24cc769092d9" />
+
+## Validación
+
+HTML validado con https://jsonformatter.org/html-validator

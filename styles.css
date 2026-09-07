@@ -1,15 +1,16 @@
 /* =========================================================
-   GameVault — Hoja de estilos principal
+   GameVault — Hoja de estilos principal (con Bootstrap 5)
    Índice:
    1. Reset y modelo de cajas global
    2. Variables (colores y tipografía)
    3. Tipografía base y jerarquía
-   4. Header y navegación (#site-header)
-   5. Layout general de secciones (.section)
-   6. Catálogo de productos (.product-grid / .product-card)
-   7. Categorías (.category-list)
-   8. Ofertas (.offers-list)
-   9. Footer (.site-footer)
+   4. Navbar Bootstrap (overrides de tema)
+   5. Layout general de secciones
+   6. Carrusel de destacados
+   7. Cards de producto (Grid Cards)
+   8. Categorías (chips en grid)
+   9. Ofertas
+   10. Footer
    ========================================================= */
 
 /* -------------------- 1. Reset y box model -------------------- */
@@ -17,8 +18,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 /* -------------------- 2. Variables -------------------- */
@@ -38,6 +37,10 @@
 
   --radius: 8px;
   --spacing-section: 3rem;
+
+  /* Alineación con Bootstrap primary para botones/badges */
+  --bs-primary: #4f46e5;
+  --bs-primary-rgb: 79, 70, 229;
 }
 
 /* -------------------- 3. Tipografía base -------------------- */
@@ -47,7 +50,7 @@ html {
 
 body {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--color-text);
   background-color: var(--color-bg);
@@ -102,74 +105,56 @@ img {
   display: block;
 }
 
-/* -------------------- 4. Header y navegación -------------------- */
+/* -------------------- 4. Navbar Bootstrap (overrides) -------------------- */
+/* Personaliza la navbar de Bootstrap con la paleta GameVault */
 .site-header {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  grid-template-areas:
-    "logo title nav"
-    "logo tagline nav";
-  align-items: center;
-  column-gap: 1.5rem;
   background-color: var(--color-bg-alt);
-  color: var(--color-text);
-  padding: 2rem 1.5rem;
-  text-align: left;
   border-bottom: 1px solid var(--color-border);
 }
 
-.site-header .logo {
-  grid-area: logo;
-  margin: 0;
+.site-header .navbar {
+  background-color: transparent;
 }
 
-.site-header h1 {
-  grid-area: title;
-}
-
-.site-header p {
-  grid-area: tagline;
-  max-width: 40rem;
-  margin: 0;
-}
-
-.main-nav {
-  grid-area: nav;
-  align-self: center;
-}
-
-.main-nav .nav-list {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.main-nav .nav-list li a {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
+.site-header .navbar-brand {
   color: var(--color-text);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  text-decoration: none;
 }
 
-.main-nav .nav-list li a:hover,
-.main-nav .nav-list li a:focus-visible {
+.site-header .navbar-brand:hover,
+.site-header .navbar-brand:focus-visible {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.site-header .logo {
+  height: 2.5rem;
+  width: auto;
+}
+
+.site-header .nav-link {
+  color: var(--color-text);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+}
+
+.site-header .nav-link:hover,
+.site-header .nav-link:focus-visible {
   background-color: var(--color-primary);
-  border-color: var(--color-primary);
   color: #fff;
   text-decoration: none;
 }
 
-/* -------------------- 5. Layout general de secciones -------------------- */
-main {
-  max-width: 72rem;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+.site-header .navbar-toggler {
+  border-color: var(--color-border);
 }
 
+.site-header .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.25);
+}
+
+/* -------------------- 5. Layout general de secciones -------------------- */
 .section {
   padding: var(--spacing-section) 0;
   border-bottom: 1px solid var(--color-border);
@@ -179,7 +164,8 @@ main {
   border-bottom: none;
 }
 
-/* Selectores de ID: separación al hacer scroll con anclas + acento visual en Ofertas */
+/* Selectores de ID: separación al hacer scroll con anclas */
+#destacados,
 #catalogo,
 #categorias,
 #ofertas,
@@ -196,22 +182,41 @@ main {
   background-color: var(--color-bg-alt);
 }
 
-/* -------------------- 6. Catálogo de productos -------------------- */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+/* -------------------- 6. Carrusel de destacados -------------------- */
+/* Contenedor visual del carrusel: altura acotada y captions legibles */
+.carousel-image {
+  max-height: 28rem;
+  object-fit: cover;
+  background-color: var(--color-bg-alt);
 }
 
+.carousel-caption {
+  background-color: rgba(17, 24, 39, 0.65);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  left: 10%;
+  right: 10%;
+  bottom: 1.5rem;
+}
+
+.carousel-caption h3,
+.carousel-caption p {
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 3rem;
+}
+
+/* -------------------- 7. Cards de producto (Grid Cards) -------------------- */
+/* Combina .card de Bootstrap con acentos del tema GameVault */
 .product-card {
   position: relative;
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
+  border-color: var(--color-border);
   border-radius: var(--radius);
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
+  overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -220,82 +225,51 @@ main {
   box-shadow: 0 8px 20px rgba(17, 24, 39, 0.12);
 }
 
-/* resalta la tarjeta cuando se llega desde un enlace de categoría (#id) */
 .product-card:target {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
 }
 
-.product-card .category-tag {
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--color-primary);
-  margin-bottom: 0.35rem;
+.product-card .category-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 1;
 }
 
-.product-card img {
-  border-radius: var(--radius);
-  margin-bottom: 1rem;
+.product-card .bestseller-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 1;
 }
 
-.product-card .price {
-  font-weight: 700;
-  color: var(--color-accent);
-  margin-top: auto;
-}
-
-.product-card .btn {
-  margin-top: 0.75rem;
-  display: inline-block;
-  text-align: center;
-  padding: 0.6rem 1rem;
-  background-color: var(--color-primary);
-  color: #fff;
-  border-radius: var(--radius);
-  font-weight: 600;
-}
-
-.product-card .btn:hover,
-.product-card .btn:focus-visible {
-  background-color: var(--color-primary-dark);
-  text-decoration: none;
-}
-
-/* alterna un leve tono de fondo en las tarjetas pares */
-.product-card:nth-child(even) {
+.product-card .card-img-top {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
   background-color: var(--color-bg-alt);
 }
 
-/* destaca la primera tarjeta como "más vendida" con una etiqueta, no con un borde ambiguo */
-.product-card:first-child::after {
-  content: "Más vendido";
-  position: absolute;
-  top: -0.65rem;
-  right: 1rem;
-  background-color: var(--color-accent);
-  color: var(--color-bg);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
+.product-card .price {
+  color: var(--color-accent);
 }
 
-/* -------------------- 7. Categorías -------------------- */
-.category-list {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1rem;
+.product-card .btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
-.category-list li a {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.5rem 1.25rem;
+.product-card .btn-primary:hover,
+.product-card .btn-primary:focus-visible {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+/* -------------------- 8. Categorías (chips en grid) -------------------- */
+.category-chip {
+  display: block;
+  padding: 0.75rem 1rem;
   border: 1px solid var(--color-border);
   border-radius: 999px;
   background-color: var(--color-surface);
@@ -303,19 +277,19 @@ main {
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.category-list li a:hover,
-.category-list li a:focus-visible {
+.category-chip:hover,
+.category-chip:focus-visible {
   border-color: var(--color-primary);
   color: var(--color-accent);
   text-decoration: none;
 }
 
-/* -------------------- 8. Ofertas -------------------- */
+/* -------------------- 9. Ofertas -------------------- */
 .offers-list {
   list-style: none;
   counter-reset: offer;
   margin-top: 1rem;
-  max-width: 40rem;
+  padding-left: 0;
 }
 
 .offers-list li {
@@ -347,7 +321,6 @@ main {
   font-weight: 700;
 }
 
-/* destaca la oferta con mayor descuento con una etiqueta de texto, no con un borde ambiguo */
 .offers-list li:first-child::after {
   content: "Mejor oferta";
   display: inline-block;
@@ -362,107 +335,40 @@ main {
   border-radius: 999px;
 }
 
-/* -------------------- 9. Footer -------------------- */
+/* -------------------- 10. Footer -------------------- */
 .site-footer {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-areas:
-    "heading social"
-    "text social"
-    "copyright copyright";
-  align-items: start;
-  column-gap: 2rem;
   background-color: var(--color-bg-alt);
   border-top: 1px solid var(--color-border);
-  padding: var(--spacing-section) 1.5rem;
-  text-align: left;
+  padding: var(--spacing-section) 0;
 }
 
 .site-footer h2 {
-  grid-area: heading;
   border-bottom: none;
 }
 
-.site-footer > p:first-of-type {
-  grid-area: text;
-  max-width: 40rem;
-  margin: 0;
-}
-
-.social-list {
-  grid-area: social;
-  list-style: none;
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-self: end;
-  margin-bottom: 0;
-}
-
-.social-list li a {
+.social-list a {
+  display: inline-block;
   padding: 0.5rem 1rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   color: var(--color-text);
 }
 
-.social-list li a:hover,
-.social-list li a:focus-visible {
+.social-list a:hover,
+.social-list a:focus-visible {
   border-color: var(--color-accent);
   color: var(--color-accent);
   text-decoration: none;
 }
 
-.site-footer > p:last-child {
-  grid-area: copyright;
+.site-footer .copyright {
   color: var(--color-text-muted);
   font-size: 0.85rem;
-  text-align: center;
   margin-top: 1.5rem;
 }
 
-/* -------------------- Responsive: Tablet -------------------- */
+/* -------------------- Responsive tipografía -------------------- */
 @media (max-width: 48rem) {
-  .site-header {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "logo"
-      "title"
-      "tagline"
-      "nav";
-    text-align: center;
-    justify-items: center;
-  }
-
-  .site-header p {
-    margin: 0 auto;
-  }
-
-  .site-footer {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "heading"
-      "text"
-      "social"
-      "copyright";
-    text-align: center;
-    justify-items: center;
-  }
-
-  .site-footer > p:first-of-type {
-    margin: 0 auto;
-  }
-
-  .social-list {
-    justify-content: center;
-    justify-self: center;
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   h1 {
     font-size: 1.9rem;
   }
@@ -470,23 +376,24 @@ main {
   .section {
     padding: 2.25rem 0;
   }
+
+  .carousel-caption {
+    left: 5%;
+    right: 5%;
+    bottom: 1rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .carousel-caption h3 {
+    font-size: 1rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.85rem;
+  }
 }
 
-/* -------------------- Responsive: Mobile -------------------- */
 @media (max-width: 30rem) {
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .main-nav .nav-list {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .main-nav .nav-list li a {
-    text-align: center;
-  }
-
   h1 {
     font-size: 1.6rem;
   }
@@ -494,15 +401,8 @@ main {
   .section {
     padding: 1.75rem 0;
   }
-}
 
-/* -------------------- Responsive: Desktop grande -------------------- */
-@media (min-width: 64rem) {
-  main {
-    padding: 0 2rem;
-  }
-
-  .product-grid {
-    gap: 2rem;
+  .carousel-image {
+    max-height: 16rem;
   }
 }
