@@ -48,18 +48,20 @@ La página usa una jerarquía de encabezados `<h1>`–`<h3>`, listas para oferta
 ## Cómo se ve
 
 ### Desktop
-<img width="1293" height="1298" alt="desktop-1" src="https://github.com/user-attachments/assets/5dff6505-0fea-45d7-84ab-5802bc3e80db" />
-<img width="1292" height="1300" alt="desktop-2" src="https://github.com/user-attachments/assets/d6e38d4b-a648-4f1f-a2ae-55a3c0edb60a" />
+<img width="1387" height="1296" alt="desktop-1" src="https://github.com/user-attachments/assets/34619841-ef21-4f35-a5d6-1eeedbdd9f18" />
+<img width="1387" height="1293" alt="desktop-2" src="https://github.com/user-attachments/assets/e329078c-998c-40a5-8d19-60a7899b2c64" />
+<img width="1383" height="1297" alt="desktop-3" src="https://github.com/user-attachments/assets/f277c961-f901-4444-ac8b-6efacb09489f" />
 
 ### Tablet
-<img width="910" height="1272" alt="tablet-1" src="https://github.com/user-attachments/assets/77de7eae-ded9-4aa5-a0ff-1ae5f8aea957" />
-<img width="908" height="1273" alt="tablet-2" src="https://github.com/user-attachments/assets/9ed696a3-935f-446b-904a-04d22da2c045" />
+<img width="935" height="1301" alt="tablet-1" src="https://github.com/user-attachments/assets/f459c7f1-a1b3-4519-9299-900064a47b16" />
+<img width="954" height="1296" alt="tablet-2" src="https://github.com/user-attachments/assets/e89ceec0-e280-4918-bad5-5f84fa1279f7" />
+<img width="958" height="1298" alt="tablet-3" src="https://github.com/user-attachments/assets/6831a993-c46a-49f0-ac8c-059176d4f429" />
 
 ### Mobile
-<img width="664" height="1002" alt="phone-1" src="https://github.com/user-attachments/assets/a0120a05-f400-4404-be1d-80d5667cf70c" />
-<img width="635" height="1002" alt="phone-2" src="https://github.com/user-attachments/assets/13dd8d26-3877-4f3e-9f98-2c31bb7bed10" />
-<img width="622" height="999" alt="phone-3" src="https://github.com/user-attachments/assets/dfb24fbd-a8de-4c1b-8df8-5de2fd534045" />
-<img width="625" height="1017" alt="phone-4" src="https://github.com/user-attachments/assets/0b3b82f4-d831-4053-b1cd-24cc769092d9" />
+<img width="445" height="1297" alt="mobile-1" src="https://github.com/user-attachments/assets/1b0de3f0-32a6-4f4f-abff-2d622c30e066" />
+<img width="434" height="1300" alt="mobile-3" src="https://github.com/user-attachments/assets/5742f38d-aec4-4336-82d0-15b8d22afdc0" />
+<img width="449" height="1291" alt="mobile-2" src="https://github.com/user-attachments/assets/ef3d309f-893a-448e-85b9-e1a07fc3d0cc" />
+
 
 ## Validación
 
