@@ -1,0 +1,8 @@
+[
+  { "id": 1, "jugador": "NeonRunner", "juego": "Cyber Odyssey 2077", "puntaje": 98450 },
+  { "id": 2, "jugador": "SombraVeloz", "juego": "Reino de Sombras", "puntaje": 87200 },
+  { "id": 3, "jugador": "TurboKid", "juego": "Velocidad Extrema", "puntaje": 76300 },
+  { "id": 4, "jugador": "PixelKnight", "juego": "Reino de Sombras", "puntaje": 71950 },
+  { "id": 5, "jugador": "ByteRacer", "juego": "Velocidad Extrema", "puntaje": 68500 },
+  { "id": 6, "jugador": "CyberNova", "juego": "Cyber Odyssey 2077", "puntaje": 65120 }
+]

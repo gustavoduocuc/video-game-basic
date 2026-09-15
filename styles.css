@@ -10,6 +10,7 @@
    7. Cards de producto (Grid Cards)
    8. Categorías (chips en grid)
    9. Ofertas
+   9b. Puntuaciones (Fetch API)
    10. Footer
    ========================================================= */
 
@@ -169,6 +170,7 @@ img {
 #catalogo,
 #categorias,
 #ofertas,
+#puntuaciones,
 #contacto,
 #cyber-odyssey,
 #reino-de-sombras,
@@ -266,6 +268,27 @@ img {
   text-decoration: none;
 }
 
+/* Bloque de detalle creado dinámicamente por script.js al hacer click */
+.product-detail {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.product-detail-text {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+/* Resaltado de card en mouseover/mouseout (ver script.js) */
+.product-card.is-highlighted {
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.2);
+}
+
 /* -------------------- 8. Categorías (chips en grid) -------------------- */
 .category-chip {
   display: block;
@@ -335,6 +358,31 @@ img {
   border-radius: 999px;
 }
 
+/* -------------------- 9b. Puntuaciones (Fetch API) -------------------- */
+.scores-loading {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.scores-error {
+  color: #b91c1c;
+  margin-bottom: 0.75rem;
+}
+
+.scores-list {
+  margin-top: 1rem;
+  padding-left: 0;
+}
+
+.scores-list .scores-item {
+  padding: 0.65rem 1rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+}
+
 /* -------------------- 10. Footer -------------------- */
 .site-footer {
   background-color: var(--color-bg-alt);
@@ -365,6 +413,12 @@ img {
   color: var(--color-text-muted);
   font-size: 0.85rem;
   margin-top: 1.5rem;
+}
+
+/* Formulario de contacto: estado de validación gestionado por script.js */
+#contact-form-status {
+  font-weight: 600;
+  min-height: 1.5rem;
 }
 
 /* -------------------- Responsive tipografía -------------------- */

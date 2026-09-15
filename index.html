@@ -63,6 +63,9 @@
               <a class="nav-link" href="#categorias">Categorías</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#puntuaciones">Puntuaciones</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#contacto">Contacto</a>
             </li>
           </ul>
@@ -219,7 +222,16 @@
                   Disponible para PC, PlayStation y Xbox.
                 </p>
                 <p class="card-text price mt-auto fw-bold">Precio: $49.990 CLP</p>
-                <a class="btn btn-primary" href="#cyber-odyssey">Ver detalles de Cyber Odyssey 2077</a>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle-detail
+                  data-detail="Año de lanzamiento: 2077 (ficticio) · Modo: un jugador y cooperativo online · Clasificación: +16. Incluye editor de personaje y misiones secundarias ramificadas."
+                  aria-expanded="false"
+                  aria-label="Mostrar u ocultar detalles de Cyber Odyssey 2077"
+                >
+                  Ver detalles de Cyber Odyssey 2077
+                </button>
               </div>
             </article>
           </div>
@@ -241,7 +253,16 @@
                   Disponible para Nintendo Switch y PC.
                 </p>
                 <p class="card-text price mt-auto fw-bold">Precio: $34.990 CLP</p>
-                <a class="btn btn-primary" href="#reino-de-sombras">Ver detalles de Reino de Sombras</a>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle-detail
+                  data-detail="Duración estimada: 35 horas · Sistema de combate táctico por turnos con hasta 4 personajes en el equipo. Incluye modo Nueva Partida+."
+                  aria-expanded="false"
+                  aria-label="Mostrar u ocultar detalles de Reino de Sombras"
+                >
+                  Ver detalles de Reino de Sombras
+                </button>
               </div>
             </article>
           </div>
@@ -263,7 +284,16 @@
                   Disponible para todas las plataformas.
                 </p>
                 <p class="card-text price mt-auto fw-bold">Precio: $29.990 CLP</p>
-                <a class="btn btn-primary" href="#velocidad-extrema">Ver detalles de Velocidad Extrema</a>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle-detail
+                  data-detail="Multijugador online hasta 12 jugadores · Más de 20 circuitos y 40 vehículos personalizables. Incluye editor de pistas."
+                  aria-expanded="false"
+                  aria-label="Mostrar u ocultar detalles de Velocidad Extrema"
+                >
+                  Ver detalles de Velocidad Extrema
+                </button>
               </div>
             </article>
           </div>
@@ -285,7 +315,16 @@
                   Compatible con todo el catálogo de GameVault.
                 </p>
                 <p class="card-text price mt-auto fw-bold">Precio: $349.990 CLP</p>
-                <a class="btn btn-primary" href="#nexcore-x">Ver detalles de NexCore X</a>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle-detail
+                  data-detail="Almacenamiento: 2 TB SSD · Resolución: hasta 4K a 120 fps · Incluye un control ProGrip y 3 meses de GameVault Plus."
+                  aria-expanded="false"
+                  aria-label="Mostrar u ocultar detalles de NexCore X"
+                >
+                  Ver detalles de NexCore X
+                </button>
               </div>
             </article>
           </div>
@@ -307,7 +346,16 @@
                   Compatible con PC y las principales consolas.
                 </p>
                 <p class="card-text price mt-auto fw-bold">Precio: $24.990 CLP</p>
-                <a class="btn btn-primary" href="#progrip">Ver detalles de Mando ProGrip</a>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle-detail
+                  data-detail="Autonomía: hasta 20 horas de batería · Conexión inalámbrica de baja latencia y cable USB-C de respaldo. Compatible con PC, consolas y móviles."
+                  aria-expanded="false"
+                  aria-label="Mostrar u ocultar detalles de Mando ProGrip"
+                >
+                  Ver detalles de Mando ProGrip
+                </button>
               </div>
             </article>
           </div>
@@ -364,6 +412,21 @@
       </div>
     </section>
 
+    <!-- =========================================================
+         Puntuaciones — Fetch API
+         Propósito: cargar dinámicamente assets/data/scores.json
+         y mostrar el resultado, con estados de carga y error
+         ========================================================= -->
+    <section id="puntuaciones" class="section" aria-labelledby="puntuaciones-titulo">
+      <div class="container">
+        <h2 id="puntuaciones-titulo">Mejores puntuaciones</h2>
+        <p>Puntuaciones más altas registradas por la comunidad de GameVault.</p>
+
+        <div id="puntuaciones-resultado" aria-live="polite"></div>
+        <ul id="puntuaciones-lista" class="scores-list list-unstyled"></ul>
+      </div>
+    </section>
+
   </main>
 
   <footer id="contacto" class="site-footer">
@@ -372,6 +435,26 @@
         <div class="col-12 col-md-7">
           <h2>Contacto y redes</h2>
           <p>¿Tienes dudas sobre tu pedido? Escríbenos o visítanos en nuestras redes sociales.</p>
+
+          <form id="contact-form" novalidate>
+            <div class="mb-3">
+              <label for="contact-name" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="contact-name" name="name" required />
+              <p class="invalid-feedback" data-error-for="contact-name">Por favor ingresa tu nombre.</p>
+            </div>
+            <div class="mb-3">
+              <label for="contact-email" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="contact-email" name="email" required />
+              <p class="invalid-feedback" data-error-for="contact-email">Ingresa un correo electrónico válido.</p>
+            </div>
+            <div class="mb-3">
+              <label for="contact-message" class="form-label">Mensaje</label>
+              <textarea class="form-control" id="contact-message" name="message" rows="3" required></textarea>
+              <p class="invalid-feedback" data-error-for="contact-message">Por favor escribe tu mensaje.</p>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+            <p id="contact-form-status" class="mt-3" role="status" aria-live="polite"></p>
+          </form>
         </div>
         <div class="col-12 col-md-5">
           <ul class="social-list list-unstyled d-flex flex-wrap gap-2 justify-content-md-end mb-0">
@@ -393,5 +476,8 @@
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"
   ></script>
+
+  <!-- Interactividad propia del sitio (DOM, eventos, Fetch API) -->
+  <script src="script.js" defer></script>
 </body>
 </html>
