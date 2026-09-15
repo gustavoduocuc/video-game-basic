@@ -47,19 +47,21 @@ La página usa una jerarquía de encabezados `<h1>`–`<h3>`, listas para oferta
 
 ## Cómo se ve
 
+Capturas actualizadas con la interactividad JS: detalle de producto expandible (click), catálogo, puntuaciones cargadas vía Fetch API y validación del formulario de contacto (submit).
+
 ### Desktop
-<img width="1293" height="1298" alt="desktop-1" src="https://github.com/user-attachments/assets/5dff6505-0fea-45d7-84ab-5802bc3e80db" />
-<img width="1292" height="1300" alt="desktop-2" src="https://github.com/user-attachments/assets/d6e38d4b-a648-4f1f-a2ae-55a3c0edb60a" />
+<img width="1456" height="822" alt="Catálogo con detalle de producto expandido y card resaltada (desktop)" src="assets/screenshots/desktop-1.jpg" />
+<img width="1456" height="822" alt="Sección de puntuaciones cargada vía Fetch API (desktop)" src="assets/screenshots/desktop-2.jpg" />
 
 ### Tablet
-<img width="910" height="1272" alt="tablet-1" src="https://github.com/user-attachments/assets/77de7eae-ded9-4aa5-a0ff-1ae5f8aea957" />
-<img width="908" height="1273" alt="tablet-2" src="https://github.com/user-attachments/assets/9ed696a3-935f-446b-904a-04d22da2c045" />
+<img width="1023" height="1177" alt="Catálogo con detalle de producto expandido (tablet)" src="assets/screenshots/tablet-1.jpg" />
+<img width="1023" height="1177" alt="Formulario de contacto con envío exitoso (tablet)" src="assets/screenshots/tablet-2.jpg" />
 
 ### Mobile
-<img width="664" height="1002" alt="phone-1" src="https://github.com/user-attachments/assets/a0120a05-f400-4404-be1d-80d5667cf70c" />
-<img width="635" height="1002" alt="phone-2" src="https://github.com/user-attachments/assets/13dd8d26-3877-4f3e-9f98-2c31bb7bed10" />
-<img width="622" height="999" alt="phone-3" src="https://github.com/user-attachments/assets/dfb24fbd-a8de-4c1b-8df8-5de2fd534045" />
-<img width="625" height="1017" alt="phone-4" src="https://github.com/user-attachments/assets/0b3b82f4-d831-4053-b1cd-24cc769092d9" />
+<img width="896" height="1357" alt="Navbar colapsada y carrusel destacado (mobile)" src="assets/screenshots/phone-1.jpg" />
+<img width="896" height="1357" alt="Detalle de producto expandido en una columna (mobile)" src="assets/screenshots/phone-2.jpg" />
+<img width="896" height="1357" alt="Sección de puntuaciones cargada vía Fetch API (mobile)" src="assets/screenshots/phone-3.jpg" />
+<img width="896" height="1357" alt="Formulario de contacto con validación de errores (mobile)" src="assets/screenshots/phone-4.jpg" />
 
 ## Validación
 
