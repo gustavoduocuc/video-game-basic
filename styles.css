@@ -5,12 +5,14 @@
    2. Variables (colores y tipografía)
    3. Tipografía base y jerarquía
    4. Navbar Bootstrap (overrides de tema)
+   4b. Buscador, dropdown de categorías y carrito (navbar)
    5. Layout general de secciones
    6. Carrusel de destacados
    7. Cards de producto (Grid Cards)
    8. Categorías (chips en grid)
    9. Ofertas
    9b. Puntuaciones (Fetch API)
+   9c. Catálogo de productos (Fetch API)
    10. Footer
    ========================================================= */
 
@@ -153,6 +155,62 @@ img {
 
 .site-header .navbar-toggler:focus {
   box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.25);
+}
+
+/* -------------------- 4b. Buscador, categorías y carrito (navbar) -------------------- */
+/* Fila propia y centralizada, fuera de la navbar: evita competir por
+   espacio horizontal con los enlaces/categorías/carrito (ver index.html) */
+.site-search-bar {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.75rem 0;
+}
+
+#navbar-search-form {
+  max-width: 32rem;
+}
+
+#navbar-search-form .form-control {
+  min-width: 0;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: var(--color-primary);
+}
+
+/* Botón compacto y alineado a la derecha: no crece con el espacio sobrante */
+#cart-toggle-button {
+  max-width: 5rem;
+  white-space: nowrap;
+}
+
+#cart-toggle-button .cart-count {
+  margin-left: 0.4rem;
+}
+
+.offcanvas-body .cart-items-list {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.offcanvas-body .cart-item {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.offcanvas-body .cart-item:last-child {
+  border-bottom: none;
+}
+
+.offcanvas-body .cart-item-info {
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.cart-total {
+  border-top: 2px solid var(--color-primary);
+  padding-top: 0.75rem;
 }
 
 /* -------------------- 5. Layout general de secciones -------------------- */
@@ -381,6 +439,34 @@ img {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   color: var(--color-text);
+}
+
+/* -------------------- 9c. Catálogo de productos (Fetch API) -------------------- */
+.catalogo-filtro {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.catalogo-filtro .category-filter-chip {
+  font-size: 0.9rem;
+  padding: 0.45rem 0.75rem;
+}
+
+.catalogo-loading {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.catalogo-error {
+  color: #b91c1c;
+  margin-bottom: 0.75rem;
+}
+
+.catalogo-empty {
+  color: var(--color-text-muted);
+  font-style: italic;
 }
 
 /* -------------------- 10. Footer -------------------- */

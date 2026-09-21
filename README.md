@@ -11,18 +11,22 @@ Tienda online de videojuegos, consolas y accesorios. Página estática construid
 - HTML5 semántico (`header`, `nav`, `main`, `section`, `article`, `footer`)
 - CSS3 con variables personalizadas (tema GameVault)
 - **Bootstrap 5.3.8** vía CDN (jsDelivr)
-  - Navbar responsiva con colapso (hamburguesa)
+  - Navbar responsiva con colapso (hamburguesa), buscador y dropdown de categorías
   - Carousel con autoplay, indicadores y controles
   - Sistema de grillas (`container` / `row` / `col-*`)
-  - Cards para el catálogo de productos
+  - Cards para el catálogo de productos, generadas dinámicamente vía Fetch API
+  - Offcanvas para el resumen del carrito de compras
 
 ## Contenido
 
 | Archivo / carpeta | Descripción |
 |-------------------|-------------|
-| `index.html` | Página principal: navbar, carrusel, catálogo, categorías, ofertas y footer |
+| `index.html` | Página principal: navbar (buscador, categorías, carrito), carrusel, catálogo, categorías, ofertas y footer |
 | `styles.css` | Overrides del tema y estilos propios (carga después de Bootstrap) |
+| `script.js` | Interactividad: catálogo dinámico, filtros, carrito, formulario de contacto y puntuaciones |
 | `assets/` | Imágenes SVG del logo y portadas de productos |
+| `assets/data/products.json` | Datos del catálogo de productos, cargados vía Fetch API |
+| `assets/data/scores.json` | Datos de puntuaciones, cargados vía Fetch API |
 
 ## Uso local
 
@@ -36,10 +40,19 @@ Se necesita conexión a internet la primera vez para cargar Bootstrap desde el C
 
 ## Componentes Bootstrap usados
 
-1. **Navbar** (`navbar-expand-lg` + `navbar-toggler`): colapsa bajo 992px.
+1. **Navbar** (`navbar-expand-lg` + `navbar-toggler`): colapsa bajo 992px; incluye un formulario de búsqueda y un dropdown de categorías.
 2. **Carousel** (`data-bs-ride="carousel"`, `data-bs-interval="5000"`): juegos destacados cada 5 s.
 3. **Grid**: catálogo en `col-12 col-sm-6 col-lg-4`; categorías en `col-6 col-md-4 col-lg`.
-4. **Cards**: productos con altura uniforme (`h-100`) y botones `btn-primary`.
+4. **Cards**: productos con altura uniforme (`h-100`) y botones `btn-primary`, generadas dinámicamente desde `assets/data/products.json`.
+5. **Offcanvas**: panel lateral del carrito de compras, abierto desde el navbar.
+6. **Dropdown**: filtro de categorías del navbar.
+
+## Funcionalidades JavaScript
+
+- **Catálogo dinámico**: `script.js` carga `assets/data/products.json` vía Fetch API (`async/await` + `try/catch`), muestra un indicador de carga y, si la solicitud falla, un mensaje de error amigable con botón de reintentar.
+- **Búsqueda y categorías**: el formulario del navbar (evento `submit`) filtra el catálogo por nombre, y el dropdown de categorías (evento `click`) filtra por categoría; ambos filtros se combinan.
+- **Carrito de compras**: cada card tiene un botón "Agregar al carrito" (evento `click`) que suma el producto al carrito en memoria (o incrementa su cantidad si ya estaba agregado). El resumen —cantidad, subtotal y total— se muestra dinámicamente en el panel Offcanvas del navbar, junto con la opción de quitar productos. **Limitación conocida**: el carrito no persiste entre recargas de página (no usa `localStorage`), ya que es una demostración de estado en memoria sin backend.
+- **Detalle de producto y resaltado**: se mantienen igual que antes (click para expandir detalle, mouseover/mouseout para resaltar la card), ahora enganchados por delegación de eventos sobre las cards generadas dinámicamente.
 
 ## Estructura semántica
 
@@ -47,7 +60,7 @@ La página usa una jerarquía de encabezados `<h1>`–`<h3>`, listas para oferta
 
 ## Cómo se ve
 
-Capturas actualizadas con la interactividad JS: detalle de producto expandible (click), catálogo, puntuaciones cargadas vía Fetch API y validación del formulario de contacto (submit).
+Capturas de la interactividad JS: detalle de producto expandible (click), catálogo, puntuaciones cargadas vía Fetch API y validación del formulario de contacto (submit). *Pendiente: actualizar estas capturas para incluir el buscador, el dropdown de categorías y el carrito de compras agregados en la última actualización.*
 
 ### Desktop
 <img width="1456" height="822" alt="Catálogo con detalle de producto expandido y card resaltada (desktop)" src="assets/screenshots/desktop-1.jpg" />
