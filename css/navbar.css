@@ -2,6 +2,13 @@
 /* -------------------- 4. Navbar Bootstrap (overrides) -------------------- */
 /* Personaliza la navbar de Bootstrap con la paleta GameVault */
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--bs-sticky-zindex, 1020);
+  background-color: var(--color-bg-alt);
+}
+
+.site-intro {
   background-color: var(--color-bg-alt);
   border-bottom: 1px solid var(--color-border);
 }
