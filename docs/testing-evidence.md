@@ -20,6 +20,8 @@ Este documento reúne la evidencia de las pruebas realizadas sobre el sitio Game
 6. [Responsividad del pie de página](#6-responsividad-del-pie-de-pagina)
 7. [Caso de error A: producto no encontrado tras cambiar su nombre en los datos](#7-caso-de-error-a-producto-no-encontrado-tras-cambiar-su-nombre-en-los-datos)
 8. [Caso de error B: fallo en la carga del catálogo](#8-caso-de-error-b-fallo-en-la-carga-del-catalogo)
+9. [Formulario de contacto: campos requeridos incompletos](#9-formulario-de-contacto-campos-requeridos-incompletos)
+10. [Formulario de contacto: envío exitoso](#10-formulario-de-contacto-envio-exitoso)
 
 ## 1. Carga inicial de productos
 
@@ -84,3 +86,19 @@ Se simuló temporalmente una falla en los datos del catálogo; el sitio muestra 
 | Web (Desktop) | Tablet | Mobile |
 | --- | --- | --- |
 | <img src="../assets/screenshots/e2e-error-carga-desktop.jpg" width="300" alt="Caso de error B: fallo en la carga del catálogo - Web (Desktop)" /> | <img src="../assets/screenshots/e2e-error-carga-tablet.jpg" width="300" alt="Caso de error B: fallo en la carga del catálogo - Tablet" /> | <img src="../assets/screenshots/e2e-error-carga-mobile.jpg" width="300" alt="Caso de error B: fallo en la carga del catálogo - Mobile" /> |
+
+## 9. Formulario de contacto: campos requeridos incompletos
+
+Al intentar enviar el formulario vacío, el sitio marca los campos requeridos e informa que deben revisarse antes de continuar.
+
+| Web (Desktop) | Tablet | Mobile |
+| --- | --- | --- |
+| <img src="../assets/screenshots/e2e-contacto-error-desktop.jpg" width="300" alt="Formulario de contacto: campos requeridos incompletos - Web (Desktop)" /> | <img src="../assets/screenshots/e2e-contacto-error-tablet.jpg" width="300" alt="Formulario de contacto: campos requeridos incompletos - Tablet" /> | <img src="../assets/screenshots/e2e-contacto-error-mobile.jpg" width="300" alt="Formulario de contacto: campos requeridos incompletos - Mobile" /> |
+
+## 10. Formulario de contacto: envío exitoso
+
+Al completar nombre, correo electrónico y mensaje con datos válidos, el sitio confirma que el mensaje fue recibido.
+
+| Web (Desktop) | Tablet | Mobile |
+| --- | --- | --- |
+| <img src="../assets/screenshots/e2e-contacto-exito-desktop.jpg" width="300" alt="Formulario de contacto: envío exitoso - Web (Desktop)" /> | <img src="../assets/screenshots/e2e-contacto-exito-tablet.jpg" width="300" alt="Formulario de contacto: envío exitoso - Tablet" /> | <img src="../assets/screenshots/e2e-contacto-exito-mobile.jpg" width="300" alt="Formulario de contacto: envío exitoso - Mobile" /> |
