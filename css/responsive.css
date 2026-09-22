@@ -1,0 +1,40 @@
+/* Responsive: ajustes tipográficos y de carrusel en tablet y móvil. */
+/* -------------------- Responsive tipografía -------------------- */
+@media (max-width: 48rem) {
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  .section {
+    padding: 2.25rem 0;
+  }
+
+  .carousel-caption {
+    left: 5%;
+    right: 5%;
+    bottom: 1rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .carousel-caption h3 {
+    font-size: 1rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .section {
+    padding: 1.75rem 0;
+  }
+
+  .carousel-image {
+    max-height: 16rem;
+  }
+}

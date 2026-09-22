@@ -1,0 +1,25 @@
+/* Puntuaciones: estados de carga/error y lista de resultados. */
+/* -------------------- 9b. Puntuaciones (Fetch API) -------------------- */
+.scores-loading {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.scores-error {
+  color: #b91c1c;
+  margin-bottom: 0.75rem;
+}
+
+.scores-list {
+  margin-top: 1rem;
+  padding-left: 0;
+}
+
+.scores-list .scores-item {
+  padding: 0.65rem 1rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+}

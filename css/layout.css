@@ -1,0 +1,29 @@
+/* Layout: espaciado de secciones, anclas y fondos generales. */
+/* -------------------- 5. Layout general de secciones -------------------- */
+.section {
+  padding: var(--spacing-section) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+/* Selectores de ID: separación al hacer scroll con anclas */
+#destacados,
+#catalogo,
+#categorias,
+#ofertas,
+#puntuaciones,
+#contacto,
+#cyber-odyssey,
+#reino-de-sombras,
+#velocidad-extrema,
+#nexcore-x,
+#progrip {
+  scroll-margin-top: 1.5rem;
+}
+
+#ofertas {
+  background-color: var(--color-bg-alt);
+}

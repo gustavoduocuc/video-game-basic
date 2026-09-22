@@ -22,21 +22,25 @@ Tienda online de videojuegos, consolas y accesorios. Página estática construid
 | Archivo / carpeta | Descripción |
 |-------------------|-------------|
 | `index.html` | Página principal: navbar (buscador, categorías, carrito), carrusel, catálogo, categorías, ofertas y footer |
-| `styles.css` | Overrides del tema y estilos propios (carga después de Bootstrap) |
-| `script.js` | Interactividad: catálogo dinámico, filtros, carrito, formulario de contacto y puntuaciones |
+| `styles.css` | Archivo principal de estilos; importa las hojas temáticas en el orden de la cascada |
+| `css/` | Estilos separados por responsabilidad: base, navbar, carrito, layout, carrusel, catálogo, categorías, ofertas, puntuaciones, footer y responsive |
+| `js/main.js` | Punto de entrada que inicializa la aplicación |
+| `js/modules/` | Funcionalidades de catálogo, filtros, carrito, contacto y puntuaciones |
+| `js/shared/` | Utilidades compartidas para DOM, solicitudes, estados y formato |
+| `js/state.js` | Estado compartido del catálogo y los filtros |
 | `assets/` | Imágenes SVG del logo y portadas de productos |
 | `assets/data/products.json` | Datos del catálogo de productos, cargados vía Fetch API |
 | `assets/data/scores.json` | Datos de puntuaciones, cargados vía Fetch API |
 
 ## Uso local
 
-Abrir `index.html` directamente en el navegador (no requiere servidor ni instalación):
+Servir la carpeta del proyecto mediante HTTP y abrir la URL indicada por el servidor:
 
 ```bash
-open index.html
+npx http-server .
 ```
 
-Se necesita conexión a internet la primera vez para cargar Bootstrap desde el CDN.
+Los módulos ES y la carga de archivos JSON requieren un servidor local. También se necesita conexión a internet para cargar Bootstrap desde el CDN.
 
 ## Componentes Bootstrap usados
 
@@ -49,7 +53,7 @@ Se necesita conexión a internet la primera vez para cargar Bootstrap desde el C
 
 ## Funcionalidades JavaScript
 
-- **Catálogo dinámico**: `script.js` carga `assets/data/products.json` vía Fetch API (`async/await` + `try/catch`), muestra un indicador de carga y, si la solicitud falla, un mensaje de error amigable con botón de reintentar.
+- **Catálogo dinámico**: los módulos de `js/` cargan `assets/data/products.json` vía Fetch API (`async/await` + `try/catch`), muestran un indicador de carga y, si la solicitud falla, un mensaje de error amigable con botón de reintentar.
 - **Búsqueda y categorías**: el formulario del navbar (evento `submit`) filtra el catálogo por nombre, y el dropdown de categorías (evento `click`) filtra por categoría; ambos filtros se combinan.
 - **Carrito de compras**: cada card tiene un botón "Agregar al carrito" (evento `click`) que suma el producto al carrito en memoria (o incrementa su cantidad si ya estaba agregado). El resumen —cantidad, subtotal y total— se muestra dinámicamente en el panel Offcanvas del navbar, junto con la opción de quitar productos. **Limitación conocida**: el carrito no persiste entre recargas de página (no usa `localStorage`), ya que es una demostración de estado en memoria sin backend.
 - **Detalle de producto y resaltado**: se mantienen igual que antes (click para expandir detalle, mouseover/mouseout para resaltar la card), ahora enganchados por delegación de eventos sobre las cards generadas dinámicamente.
@@ -57,10 +61,6 @@ Se necesita conexión a internet la primera vez para cargar Bootstrap desde el C
 ## Estructura semántica
 
 La página usa una jerarquía de encabezados `<h1>`–`<h3>`, listas para ofertas, enlaces descriptivos e imágenes con texto alternativo.
-
-## Evidencia de pruebas
-
-Consulta la evidencia de las pruebas realizadas en [docs/testing-evidence.md](docs/testing-evidence.md).
 
 ## Validación
 

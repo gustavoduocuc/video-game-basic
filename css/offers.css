@@ -1,0 +1,51 @@
+/* Ofertas: lista numerada y distintivo de mejor oferta. */
+/* -------------------- 9. Ofertas -------------------- */
+.offers-list {
+  list-style: none;
+  counter-reset: offer;
+  margin-top: 1rem;
+  padding-left: 0;
+}
+
+.offers-list li {
+  counter-increment: offer;
+  position: relative;
+  padding: 0.9rem 1rem 0.9rem 3rem;
+  margin-bottom: 0.75rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+}
+
+.offers-list li::before {
+  content: counter(offer);
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.offers-list li:first-child::after {
+  content: "Mejor oferta";
+  display: inline-block;
+  margin-left: 0.75rem;
+  vertical-align: middle;
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
