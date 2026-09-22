@@ -46,8 +46,10 @@ async function loadProducts() {
     allProducts = await response.json();
     renderProductGrid(allProducts, "No hay productos disponibles en este momento.");
   } catch (error) {
+    // El detalle técnico es para el desarrollador (consola); el usuario ve un mensaje amigable.
+    console.error("[GameVault] No se pudo cargar el catálogo:", error);
     listEl.innerHTML = "";
-    renderCatalogError(resultEl, error);
+    renderCatalogError(resultEl);
   }
 }
 
@@ -61,12 +63,12 @@ function renderCatalogLoading(resultEl) {
 }
 
 // Muestra el mensaje de error y un botón para reintentar la carga.
-function renderCatalogError(resultEl, error) {
+function renderCatalogError(resultEl) {
   resultEl.innerHTML = "";
 
   const message = document.createElement("p");
   message.className = "catalogo-error";
-  message.textContent = `No se pudo cargar el catálogo (${error.message}). Intenta nuevamente.`;
+  message.textContent = "No pudimos cargar el catálogo en este momento. Por favor, inténtalo nuevamente en unos segundos.";
 
   const retryButton = document.createElement("button");
   retryButton.type = "button";
@@ -511,8 +513,9 @@ async function loadScores() {
     renderScoresList(listEl, scores);
     resultEl.innerHTML = "";
   } catch (error) {
+    console.error("[GameVault] No se pudieron cargar las puntuaciones:", error);
     listEl.innerHTML = "";
-    renderScoresError(resultEl, error);
+    renderScoresError(resultEl);
   }
 }
 
@@ -536,12 +539,12 @@ function renderScoresList(listEl, scores) {
 }
 
 // Muestra el mensaje de error y un botón para reintentar la carga.
-function renderScoresError(resultEl, error) {
+function renderScoresError(resultEl) {
   resultEl.innerHTML = "";
 
   const message = document.createElement("p");
   message.className = "scores-error";
-  message.textContent = `No se pudieron cargar las puntuaciones (${error.message}).`;
+  message.textContent = "No pudimos cargar las puntuaciones en este momento. Por favor, inténtalo nuevamente.";
 
   const retryButton = document.createElement("button");
   retryButton.type = "button";

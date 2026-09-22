@@ -58,23 +58,9 @@ Se necesita conexión a internet la primera vez para cargar Bootstrap desde el C
 
 La página usa una jerarquía de encabezados `<h1>`–`<h3>`, listas para ofertas, enlaces descriptivos e imágenes con texto alternativo.
 
-## Cómo se ve
+## Evidencia de pruebas
 
-Capturas de la interactividad JS: detalle de producto expandible (click), catálogo, puntuaciones cargadas vía Fetch API y validación del formulario de contacto (submit). *Pendiente: actualizar estas capturas para incluir el buscador, el dropdown de categorías y el carrito de compras agregados en la última actualización.*
-
-### Desktop
-<img width="1456" height="822" alt="Catálogo con detalle de producto expandido y card resaltada (desktop)" src="assets/screenshots/desktop-1.jpg" />
-<img width="1456" height="822" alt="Sección de puntuaciones cargada vía Fetch API (desktop)" src="assets/screenshots/desktop-2.jpg" />
-
-### Tablet
-<img width="1023" height="1177" alt="Catálogo con detalle de producto expandido (tablet)" src="assets/screenshots/tablet-1.jpg" />
-<img width="1023" height="1177" alt="Formulario de contacto con envío exitoso (tablet)" src="assets/screenshots/tablet-2.jpg" />
-
-### Mobile
-<img width="896" height="1357" alt="Navbar colapsada y carrusel destacado (mobile)" src="assets/screenshots/phone-1.jpg" />
-<img width="896" height="1357" alt="Detalle de producto expandido en una columna (mobile)" src="assets/screenshots/phone-2.jpg" />
-<img width="896" height="1357" alt="Sección de puntuaciones cargada vía Fetch API (mobile)" src="assets/screenshots/phone-3.jpg" />
-<img width="896" height="1357" alt="Formulario de contacto con validación de errores (mobile)" src="assets/screenshots/phone-4.jpg" />
+Consulta la evidencia de las pruebas realizadas en [docs/testing-evidence.md](docs/testing-evidence.md).
 
 ## Validación
 
