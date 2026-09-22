@@ -1,0 +1,67 @@
+[
+  {
+    "id": "cyber-odyssey",
+    "name": "Cyber Odyssey 2077",
+    "description": "Un RPG de mundo abierto ambientado en una metrópolis futurista. Disponible para PC, PlayStation y Xbox.",
+    "price": 49990,
+    "priceLabel": "Precio: $49.990 CLP",
+    "category": "Videojuegos de acción",
+    "categorySlug": "accion",
+    "image": "assets/cyber-odyssey.svg",
+    "imageAlt": "Portada de Cyber Odyssey 2077: un personaje futurista en una ciudad iluminada de neón",
+    "detail": "Año de lanzamiento: 2077 (ficticio) · Modo: un jugador y cooperativo online · Clasificación: +16. Incluye editor de personaje y misiones secundarias ramificadas.",
+    "bestseller": true
+  },
+  {
+    "id": "reino-de-sombras",
+    "name": "Reino de Sombras",
+    "description": "Aventura de fantasía oscura con combate táctico por turnos. Disponible para Nintendo Switch y PC.",
+    "price": 34990,
+    "priceLabel": "Precio: $34.990 CLP",
+    "category": "Videojuegos de aventura",
+    "categorySlug": "aventura",
+    "image": "assets/reino-de-sombras.svg",
+    "imageAlt": "Portada de Reino de Sombras: un caballero con espada frente a un castillo en ruinas",
+    "detail": "Duración estimada: 35 horas · Sistema de combate táctico por turnos con hasta 4 personajes en el equipo. Incluye modo Nueva Partida+.",
+    "bestseller": false
+  },
+  {
+    "id": "velocidad-extrema",
+    "name": "Velocidad Extrema",
+    "description": "Simulador de carreras arcade con modo multijugador en línea. Disponible para todas las plataformas.",
+    "price": 29990,
+    "priceLabel": "Precio: $29.990 CLP",
+    "category": "Deportes y carreras",
+    "categorySlug": "deportes-carreras",
+    "image": "assets/velocidad-extrema.svg",
+    "imageAlt": "Portada de Velocidad Extrema: un auto de carreras deslizándose en una curva nocturna",
+    "detail": "Multijugador online hasta 12 jugadores · Más de 20 circuitos y 40 vehículos personalizables. Incluye editor de pistas.",
+    "bestseller": false
+  },
+  {
+    "id": "nexcore-x",
+    "name": "NexCore X",
+    "description": "Consola de nueva generación con almacenamiento ultra rápido y modo 4K nativo. Compatible con todo el catálogo de GameVault.",
+    "price": 349990,
+    "priceLabel": "Precio: $349.990 CLP",
+    "category": "Consolas",
+    "categorySlug": "consolas",
+    "image": "assets/nexcore-x.svg",
+    "imageAlt": "Ilustración de la consola NexCore X con una franja de luz color índigo",
+    "detail": "Almacenamiento: 2 TB SSD · Resolución: hasta 4K a 120 fps · Incluye un control ProGrip y 3 meses de GameVault Plus.",
+    "bestseller": false
+  },
+  {
+    "id": "progrip",
+    "name": "Mando ProGrip",
+    "description": "Control inalámbrico ergonómico con batería de larga duración y vibración háptica. Compatible con PC y las principales consolas.",
+    "price": 24990,
+    "priceLabel": "Precio: $24.990 CLP",
+    "category": "Accesorios y periféricos",
+    "categorySlug": "accesorios",
+    "image": "assets/progrip.svg",
+    "imageAlt": "Ilustración del control inalámbrico ProGrip con luces de acento en tono cian",
+    "detail": "Autonomía: hasta 20 horas de batería · Conexión inalámbrica de baja latencia y cable USB-C de respaldo. Compatible con PC, consolas y móviles.",
+    "bestseller": false
+  }
+]

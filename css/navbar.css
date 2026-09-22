@@ -1,0 +1,88 @@
+/* Navbar: tema Bootstrap, búsqueda, categorías y acceso al carrito. */
+/* -------------------- 4. Navbar Bootstrap (overrides) -------------------- */
+/* Personaliza la navbar de Bootstrap con la paleta GameVault */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--bs-sticky-zindex, 1020);
+  background-color: var(--color-bg-alt);
+}
+
+.site-intro {
+  background-color: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header .navbar {
+  background-color: transparent;
+}
+
+.site-header .navbar-brand {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.site-header .navbar-brand:hover,
+.site-header .navbar-brand:focus-visible {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.site-header .logo {
+  height: 2.5rem;
+  width: auto;
+}
+
+.site-header .nav-link {
+  color: var(--color-text);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+}
+
+.site-header .nav-link:hover,
+.site-header .nav-link:focus-visible {
+  background-color: var(--color-primary);
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-header .navbar-toggler {
+  border-color: var(--color-border);
+}
+
+.site-header .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.25);
+}
+
+/* -------------------- 4b. Buscador, categorías y carrito (navbar) -------------------- */
+/* Fila propia y centralizada, fuera de la navbar: evita competir por
+   espacio horizontal con los enlaces/categorías/carrito (ver index.html) */
+.site-search-bar {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.75rem 0;
+}
+
+#navbar-search-form {
+  max-width: 32rem;
+}
+
+#navbar-search-form .form-control {
+  min-width: 0;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: var(--color-primary);
+}
+
+/* Botón compacto y alineado a la derecha: no crece con el espacio sobrante */
+#cart-toggle-button {
+  max-width: 5rem;
+  white-space: nowrap;
+}
+
+#cart-toggle-button .cart-count {
+  margin-left: 0.4rem;
+}

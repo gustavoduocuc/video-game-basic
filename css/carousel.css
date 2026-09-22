@@ -1,0 +1,28 @@
+/* Carrusel: dimensiones, captions y controles de destacados. */
+/* -------------------- 6. Carrusel de destacados -------------------- */
+/* Contenedor visual del carrusel: altura acotada y captions legibles */
+.carousel-image {
+  max-height: 28rem;
+  object-fit: cover;
+  background-color: var(--color-bg-alt);
+}
+
+.carousel-caption {
+  background-color: rgba(17, 24, 39, 0.65);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  left: 10%;
+  right: 10%;
+  bottom: 1.5rem;
+}
+
+.carousel-caption h3,
+.carousel-caption p {
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 3rem;
+}
