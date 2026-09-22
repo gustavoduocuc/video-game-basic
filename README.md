@@ -65,3 +65,5 @@ La página usa una jerarquía de encabezados `<h1>`–`<h3>`, listas para oferta
 ## Validación
 
 HTML validado con https://jsonformatter.org/html-validator
+
+La evidencia de las verificaciones realizadas está disponible en [docs/testing-evidence.md](docs/testing-evidence.md).
