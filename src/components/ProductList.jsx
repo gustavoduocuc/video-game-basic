@@ -8,6 +8,7 @@ export function ProductList({
   searchTerm,
   onClearCategory,
   onAddToCart,
+  isInCart,
   onRetry,
 }) {
   const activeLabel = CATEGORIES.find((item) => item.slug === category)?.label ?? "";
@@ -49,7 +50,12 @@ export function ProductList({
       <div className="row g-4 mt-1" id="catalogo-lista">
         {status === "ready" &&
           filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              onAddToCart={onAddToCart}
+              isInCart={isInCart(product.id)}
+            />
           ))}
       </div>
     </>

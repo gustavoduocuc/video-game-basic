@@ -84,5 +84,15 @@
 }
 
 #cart-toggle-button .cart-count {
-  margin-left: 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: 0;
+  background-color: var(--color-border);
+  color: var(--color-text);
+}
+
+#cart-toggle-button .cart-count--active {
+  background-color: var(--color-cart-active);
+  color: var(--color-bg);
 }

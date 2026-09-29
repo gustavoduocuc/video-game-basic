@@ -61,6 +61,7 @@ export function StorefrontApp() {
             searchTerm={catalog.searchTerm}
             onClearCategory={() => catalog.setCategory("")}
             onAddToCart={cart.addToCart}
+            isInCart={cart.isInCart}
             onRetry={catalog.retry}
           />,
           mounts.catalogRoot

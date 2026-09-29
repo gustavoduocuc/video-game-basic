@@ -17,6 +17,9 @@
   --color-text: #111827;
   --color-text-muted: #4b5563;
   --color-border: #e5e7eb;
+  --color-offer: #b45309;
+  --color-offer-surface: #fffbeb;
+  --color-cart-active: #dc3545;
 
   --font-heading: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-body: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;

@@ -33,5 +33,8 @@ export function useCart() {
     [cartItems]
   );
 
-  return { cartItems, totalItems, total, addToCart, removeFromCart };
+  // Misma fuente que add/remove: evita una segunda lista solo para pintar el botón.
+  const isInCart = useCallback((productId) => Boolean(items[productId]), [items]);
+
+  return { cartItems, totalItems, total, addToCart, removeFromCart, isInCart };
 }
