@@ -19,6 +19,7 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
   />
   <link rel="stylesheet" href="styles.css" />
+  <script type="module" crossorigin src="./assets/index-ItcPk_ED.js"></script>
 </head>
 <body>
 
@@ -74,17 +75,11 @@
                 aria-expanded="false"
               >
                 Categorías
-                <i id="category-filter-icon" class="bi bi-funnel-fill ms-1" aria-hidden="true" hidden></i>
+                <!-- Ícono de filtro activo proyectado por React (CategoryMenu) -->
+                <span id="category-filter-icon-root"></span>
               </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarCategoriesDropdown" id="navbar-category-menu">
-                <li><a class="dropdown-item" href="#catalogo" data-category-filter="">Todas las categorías</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#catalogo" data-category-filter="accion">Videojuegos de acción</a></li>
-                <li><a class="dropdown-item" href="#catalogo" data-category-filter="aventura">Videojuegos de aventura</a></li>
-                <li><a class="dropdown-item" href="#catalogo" data-category-filter="deportes-carreras">Deportes y carreras</a></li>
-                <li><a class="dropdown-item" href="#catalogo" data-category-filter="consolas">Consolas</a></li>
-                <li><a class="dropdown-item" href="#catalogo" data-category-filter="accesorios">Accesorios y periféricos</a></li>
-              </ul>
+              <!-- Contenido (li) proyectado por React (CategoryMenu) vía createPortal -->
+              <ul class="dropdown-menu" aria-labelledby="navbarCategoriesDropdown" id="navbar-category-menu"></ul>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#puntuaciones">Puntuaciones</a>
@@ -104,11 +99,12 @@
             aria-label="Abrir carrito de compras"
           >
             <i class="bi bi-cart3" aria-hidden="true"></i>
+            <!-- Contador proyectado por React (CartBadge) vía createPortal -->
             <span
               id="cart-count"
               class="badge rounded-pill text-bg-danger cart-count"
               aria-live="polite"
-            >0</span>
+            ></span>
           </button>
         </div>
       </div>
@@ -123,18 +119,8 @@
          ========================================================= -->
     <div class="site-search-bar">
       <div class="container">
-        <form id="navbar-search-form" class="d-flex mx-auto" role="search">
-          <label for="navbar-search-input" class="visually-hidden">Buscar productos</label>
-          <input
-            type="search"
-            id="navbar-search-input"
-            name="q"
-            class="form-control"
-            placeholder="Buscar productos…"
-            aria-label="Buscar productos"
-          />
-          <button class="btn btn-outline-primary ms-2" type="submit">Buscar</button>
-        </form>
+        <!-- Formulario completo renderizado por React (SearchForm) -->
+        <div id="navbar-search-root"></div>
       </div>
     </div>
 
@@ -159,9 +145,8 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
     </div>
     <div class="offcanvas-body">
-      <p id="cart-empty-message" class="text-muted">Tu carrito está vacío.</p>
-      <ul id="cart-items-list" class="cart-items-list list-unstyled"></ul>
-      <p id="cart-total" class="cart-total fw-bold mt-3" hidden></p>
+      <!-- Resumen del carrito renderizado por React (CartOffcanvasBody) -->
+      <div id="cart-offcanvas-root"></div>
     </div>
   </div>
 
@@ -288,9 +273,8 @@
           disponibles para las principales plataformas del mercado.
         </p>
 
-        <div id="catalogo-filtro" class="catalogo-filtro" aria-live="polite" hidden></div>
-        <div id="catalogo-resultado" aria-live="polite"></div>
-        <div class="row g-4 mt-1" id="catalogo-lista"></div>
+        <!-- Filtro, estado (carga/error/vacío) y grilla renderizados por React (ProductList) -->
+        <div id="catalogo-root"></div>
       </div>
     </section>
 
@@ -408,7 +392,9 @@
     crossorigin="anonymous"
   ></script>
 
-  <!-- Interactividad propia del sitio (DOM, eventos, Fetch API) -->
-  <script type="module" src="js/main.js"></script>
+  <!-- Interactividad propia del sitio que sigue siendo vainilla: puntuaciones y contacto -->
+
+  <!-- App de React: catálogo, filtros y carrito (ver src/main.jsx) -->
+  <div id="storefront-root" hidden></div>
 </body>
 </html>
