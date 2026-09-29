@@ -29,7 +29,7 @@ Al ingresar al sitio se cargan y se muestran todos los productos del catálogo c
 
 | Web (Desktop) | Tablet | Mobile |
 | --- | --- | --- |
-| <img src="../assets/screenshots/e2e-carga-inicial-desktop.jpg" width="300" alt="Carga inicial de productos - Web (Desktop)" /> | <img src="../assets/screenshots/e2e-carga-inicial-tablet.jpg" width="300" alt="Carga inicial de productos - Tablet" /> | <img src="../assets/screenshots/e2e-carga-inicial-mobile.jpg" width="300" alt="Carga inicial de productos - Mobile" /> |
+| <img src="../public/assets/screenshots/e2e-carga-inicial-desktop.jpg" width="300" alt="Carga inicial de productos - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-carga-inicial-tablet.jpg" width="300" alt="Carga inicial de productos - Tablet" /> | <img src="../public/assets/screenshots/e2e-carga-inicial-mobile.jpg" width="300" alt="Carga inicial de productos - Mobile" /> |
 
 ## 2. Búsqueda de productos mediante el formulario
 
@@ -37,7 +37,7 @@ Al buscar "mando" desde el formulario de búsqueda, el catálogo muestra únicam
 
 | Web (Desktop) | Tablet | Mobile |
 | --- | --- | --- |
-| <img src="../assets/screenshots/e2e-busqueda-desktop.jpg" width="300" alt="Búsqueda de productos mediante el formulario - Web (Desktop)" /> | <img src="../assets/screenshots/e2e-busqueda-tablet.jpg" width="300" alt="Búsqueda de productos mediante el formulario - Tablet" /> | <img src="../assets/screenshots/e2e-busqueda-mobile.jpg" width="300" alt="Búsqueda de productos mediante el formulario - Mobile" /> |
+| <img src="../public/assets/screenshots/e2e-busqueda-desktop.jpg" width="300" alt="Búsqueda de productos mediante el formulario - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-busqueda-tablet.jpg" width="300" alt="Búsqueda de productos mediante el formulario - Tablet" /> | <img src="../public/assets/screenshots/e2e-busqueda-mobile.jpg" width="300" alt="Búsqueda de productos mediante el formulario - Mobile" /> |
 
 ## 3. Navegación por categorías
 
@@ -45,7 +45,7 @@ Al elegir la categoría "Consolas" en el menú de categorías, el catálogo se f
 
 | Web (Desktop) | Tablet | Mobile |
 | --- | --- | --- |
-| <img src="../assets/screenshots/e2e-categorias-desktop.jpg" width="300" alt="Navegación por categorías - Web (Desktop)" /> | <img src="../assets/screenshots/e2e-categorias-tablet.jpg" width="300" alt="Navegación por categorías - Tablet" /> | <img src="../assets/screenshots/e2e-categorias-mobile.jpg" width="300" alt="Navegación por categorías - Mobile" /> |
+| <img src="../public/assets/screenshots/e2e-categorias-desktop.jpg" width="300" alt="Navegación por categorías - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-categorias-tablet.jpg" width="300" alt="Navegación por categorías - Tablet" /> | <img src="../public/assets/screenshots/e2e-categorias-mobile.jpg" width="300" alt="Navegación por categorías - Mobile" /> |
 
 ## 4. Agregar productos al carrito y resumen dinámico
 
@@ -53,7 +53,7 @@ Al agregar productos, el panel del carrito muestra cantidades, subtotales y el t
 
 | Web (Desktop) | Tablet | Mobile |
 | --- | --- | --- |
-| <img src="../assets/screenshots/e2e-carrito-desktop.jpg" width="300" alt="Agregar productos al carrito y resumen dinámico - Web (Desktop)" /> | <img src="../assets/screenshots/e2e-carrito-tablet.jpg" width="300" alt="Agregar productos al carrito y resumen dinámico - Tablet" /> | <img src="../assets/screenshots/e2e-carrito-mobile.jpg" width="300" alt="Agregar productos al carrito y resumen dinámico - Mobile" /> |
+| <img src="../public/assets/screenshots/e2e-carrito-desktop.jpg" width="300" alt="Agregar productos al carrito y resumen dinámico - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-carrito-tablet.jpg" width="300" alt="Agregar productos al carrito y resumen dinámico - Tablet" /> | <img src="../public/assets/screenshots/e2e-carrito-mobile.jpg" width="300" alt="Agregar productos al carrito y resumen dinámico - Mobile" /> |
 
 ## 5. Responsividad del menú de navegación
 
@@ -61,7 +61,7 @@ El menú de navegación se muestra completo en Web y se recoge tras el botón de
 
 | Web (Desktop) | Tablet | Mobile |
 | --- | --- | --- |
-| <img src="../assets/screenshots/e2e-responsividad-navbar-desktop.jpg" width="300" alt="Responsividad del menú de navegación - Web (Desktop)" /> | <img src="../assets/screenshots/e2e-responsividad-navbar-tablet.jpg" width="300" alt="Responsividad del menú de navegación - Tablet" /> | <img src="../assets/screenshots/e2e-responsividad-navbar-mobile.jpg" width="300" alt="Responsividad del menú de navegación - Mobile" /> |
+| <img src="../public/assets/screenshots/e2e-responsividad-navbar-desktop.jpg" width="300" alt="Responsividad del menú de navegación - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-responsividad-navbar-tablet.jpg" width="300" alt="Responsividad del menú de navegación - Tablet" /> | <img src="../public/assets/screenshots/e2e-responsividad-navbar-mobile.jpg" width="300" alt="Responsividad del menú de navegación - Mobile" /> |
 
 ## 6. Responsividad del pie de página
 
@@ -69,7 +69,7 @@ El pie de página muestra el formulario de contacto, el correo y los enlaces a r
 
 | Web (Desktop) | Tablet | Mobile |
 | --- | --- | --- |
-| <img src="../assets/screenshots/e2e-responsividad-footer-desktop.jpg" width="300" alt="Responsividad del pie de página - Web (Desktop)" /> | <img src="../assets/screenshots/e2e-responsividad-footer-tablet.jpg" width="300" alt="Responsividad del pie de página - Tablet" /> | <img src="../assets/screenshots/e2e-responsividad-footer-mobile.jpg" width="300" alt="Responsividad del pie de página - Mobile" /> |
+| <img src="../public/assets/screenshots/e2e-responsividad-footer-desktop.jpg" width="300" alt="Responsividad del pie de página - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-responsividad-footer-tablet.jpg" width="300" alt="Responsividad del pie de página - Tablet" /> | <img src="../public/assets/screenshots/e2e-responsividad-footer-mobile.jpg" width="300" alt="Responsividad del pie de página - Mobile" /> |
 
 ## 7. Caso de error A: producto no encontrado tras cambiar su nombre en los datos
 
@@ -77,7 +77,7 @@ Se cambió temporalmente el nombre de un producto en los datos del catálogo; al
 
 | Web (Desktop) | Tablet | Mobile |
 | --- | --- | --- |
-| <img src="../assets/screenshots/e2e-error-sin-coincidencia-desktop.jpg" width="300" alt="Caso de error A: producto no encontrado tras cambiar su nombre en los datos - Web (Desktop)" /> | <img src="../assets/screenshots/e2e-error-sin-coincidencia-tablet.jpg" width="300" alt="Caso de error A: producto no encontrado tras cambiar su nombre en los datos - Tablet" /> | <img src="../assets/screenshots/e2e-error-sin-coincidencia-mobile.jpg" width="300" alt="Caso de error A: producto no encontrado tras cambiar su nombre en los datos - Mobile" /> |
+| <img src="../public/assets/screenshots/e2e-error-sin-coincidencia-desktop.jpg" width="300" alt="Caso de error A: producto no encontrado tras cambiar su nombre en los datos - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-error-sin-coincidencia-tablet.jpg" width="300" alt="Caso de error A: producto no encontrado tras cambiar su nombre en los datos - Tablet" /> | <img src="../public/assets/screenshots/e2e-error-sin-coincidencia-mobile.jpg" width="300" alt="Caso de error A: producto no encontrado tras cambiar su nombre en los datos - Mobile" /> |
 
 ## 8. Caso de error B: fallo en la carga del catálogo
 
@@ -85,7 +85,7 @@ Se simuló temporalmente una falla en los datos del catálogo; el sitio muestra 
 
 | Web (Desktop) | Tablet | Mobile |
 | --- | --- | --- |
-| <img src="../assets/screenshots/e2e-error-carga-desktop.jpg" width="300" alt="Caso de error B: fallo en la carga del catálogo - Web (Desktop)" /> | <img src="../assets/screenshots/e2e-error-carga-tablet.jpg" width="300" alt="Caso de error B: fallo en la carga del catálogo - Tablet" /> | <img src="../assets/screenshots/e2e-error-carga-mobile.jpg" width="300" alt="Caso de error B: fallo en la carga del catálogo - Mobile" /> |
+| <img src="../public/assets/screenshots/e2e-error-carga-desktop.jpg" width="300" alt="Caso de error B: fallo en la carga del catálogo - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-error-carga-tablet.jpg" width="300" alt="Caso de error B: fallo en la carga del catálogo - Tablet" /> | <img src="../public/assets/screenshots/e2e-error-carga-mobile.jpg" width="300" alt="Caso de error B: fallo en la carga del catálogo - Mobile" /> |
 
 ## 9. Formulario de contacto: campos requeridos incompletos
 
@@ -93,7 +93,7 @@ Al intentar enviar el formulario vacío, el sitio marca los campos requeridos e 
 
 | Web (Desktop) | Tablet | Mobile |
 | --- | --- | --- |
-| <img src="../assets/screenshots/e2e-contacto-error-desktop.jpg" width="300" alt="Formulario de contacto: campos requeridos incompletos - Web (Desktop)" /> | <img src="../assets/screenshots/e2e-contacto-error-tablet.jpg" width="300" alt="Formulario de contacto: campos requeridos incompletos - Tablet" /> | <img src="../assets/screenshots/e2e-contacto-error-mobile.jpg" width="300" alt="Formulario de contacto: campos requeridos incompletos - Mobile" /> |
+| <img src="../public/assets/screenshots/e2e-contacto-error-desktop.jpg" width="300" alt="Formulario de contacto: campos requeridos incompletos - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-contacto-error-tablet.jpg" width="300" alt="Formulario de contacto: campos requeridos incompletos - Tablet" /> | <img src="../public/assets/screenshots/e2e-contacto-error-mobile.jpg" width="300" alt="Formulario de contacto: campos requeridos incompletos - Mobile" /> |
 
 ## 10. Formulario de contacto: envío exitoso
 
@@ -101,4 +101,4 @@ Al completar nombre, correo electrónico y mensaje con datos válidos, el sitio 
 
 | Web (Desktop) | Tablet | Mobile |
 | --- | --- | --- |
-| <img src="../assets/screenshots/e2e-contacto-exito-desktop.jpg" width="300" alt="Formulario de contacto: envío exitoso - Web (Desktop)" /> | <img src="../assets/screenshots/e2e-contacto-exito-tablet.jpg" width="300" alt="Formulario de contacto: envío exitoso - Tablet" /> | <img src="../assets/screenshots/e2e-contacto-exito-mobile.jpg" width="300" alt="Formulario de contacto: envío exitoso - Mobile" /> |
+| <img src="../public/assets/screenshots/e2e-contacto-exito-desktop.jpg" width="300" alt="Formulario de contacto: envío exitoso - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-contacto-exito-tablet.jpg" width="300" alt="Formulario de contacto: envío exitoso - Tablet" /> | <img src="../public/assets/screenshots/e2e-contacto-exito-mobile.jpg" width="300" alt="Formulario de contacto: envío exitoso - Mobile" /> |
