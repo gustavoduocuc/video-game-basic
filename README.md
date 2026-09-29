@@ -1,6 +1,6 @@
 # GameVault
 
-Tienda online de videojuegos, consolas y accesorios. Página estática construida con HTML semántico, CSS propio y **Bootstrap 5**.
+Tienda online de videojuegos, consolas y accesorios. Construida con HTML semántico, CSS propio, **Bootstrap 5** y **React** (Vite) para el catálogo, los filtros y el carrito.
 
 ## Sitio publicado
 
@@ -14,33 +14,44 @@ Tienda online de videojuegos, consolas y accesorios. Página estática construid
   - Navbar responsiva con colapso (hamburguesa), buscador y dropdown de categorías
   - Carousel con autoplay, indicadores y controles
   - Sistema de grillas (`container` / `row` / `col-*`)
-  - Cards para el catálogo de productos, generadas dinámicamente vía Fetch API
+  - Cards para el catálogo de productos
   - Offcanvas para el resumen del carrito de compras
+- **React 19 + Vite**: componentes funcionales para el catálogo, el buscador, el filtro de categorías y el carrito, montados sobre el mismo HTML/CSS de Bootstrap (ver "Arquitectura de la app de React" más abajo)
+- El resto de la página (carrusel, categorías, ofertas, puntuaciones y formulario de contacto) sigue siendo HTML + JavaScript vainilla con módulos ES
 
 ## Contenido
 
 | Archivo / carpeta | Descripción |
 |-------------------|-------------|
-| `index.html` | Página principal: navbar (buscador, categorías, carrito), carrusel, catálogo, categorías, ofertas y footer |
-| `styles.css` | Archivo principal de estilos; importa las hojas temáticas en el orden de la cascada |
-| `css/` | Estilos separados por responsabilidad: base, navbar, carrito, layout, carrusel, catálogo, categorías, ofertas, puntuaciones, footer y responsive |
-| `js/main.js` | Punto de entrada que inicializa la aplicación |
-| `js/modules/` | Funcionalidades de catálogo, filtros, carrito, contacto y puntuaciones |
-| `js/shared/` | Utilidades compartidas para DOM, solicitudes, estados y formato |
-| `js/state.js` | Estado compartido del catálogo y los filtros |
-| `assets/` | Imágenes SVG del logo y portadas de productos |
-| `assets/data/products.json` | Datos del catálogo de productos, cargados vía Fetch API |
-| `assets/data/scores.json` | Datos de puntuaciones, cargados vía Fetch API |
+| `index.html` | Punto de entrada de Vite: navbar, carrusel, catálogo, categorías, ofertas, puntuaciones y footer; incluye los contenedores donde React monta el catálogo, los filtros y el carrito |
+| `src/` | App de React: `App.jsx` (ensambla todo), `components/`, `hooks/` (`useCatalog`, `useCart`), `data/` y `utils/` |
+| `vite.config.js` | Configuración de Vite (plugin de React, `base: './'`) |
+| `public/styles.css` | Archivo principal de estilos; importa las hojas temáticas en el orden de la cascada |
+| `public/css/` | Estilos separados por responsabilidad: base, navbar, carrito, layout, carrusel, catálogo, categorías, ofertas, puntuaciones, footer y responsive |
+| `js/main.js` | Punto de entrada del JavaScript vainilla restante: puntuaciones y formulario de contacto |
+| `js/modules/` | `contact-form.js` y `scores.js` |
+| `js/shared/` | Utilidades compartidas para DOM, solicitudes, estados y formato (usadas por `scores.js`) |
+| `public/assets/` | Imágenes SVG del logo y portadas de productos |
+| `public/assets/data/products.json` | Datos del catálogo de productos, cargados vía Fetch API desde React |
+| `public/assets/data/scores.json` | Datos de puntuaciones, cargados vía Fetch API |
 
 ## Uso local
 
-Servir la carpeta del proyecto mediante HTTP y abrir la URL indicada por el servidor:
-
 ```bash
-npx http-server .
+npm install
+npm run dev       # servidor de desarrollo con recarga en caliente
+npm run build     # build de producción en dist/
+npm run preview   # sirve el build de producción localmente
 ```
 
-Los módulos ES y la carga de archivos JSON requieren un servidor local. También se necesita conexión a internet para cargar Bootstrap desde el CDN.
+## Arquitectura de la app de React
+
+El catálogo, el buscador, el filtro de categorías y el carrito son componentes funcionales de React (`src/`) que se proyectan, mediante `ReactDOM.createPortal`, dentro del mismo HTML de Bootstrap que ya existía (navbar, offcanvas, sección de catálogo), sin introducir un router ni reescribir el resto de la página:
+
+- `useCatalog` — carga `assets/data/products.json` con `fetch` dentro de un `useEffect`, y expone estado de carga/error/listo, categoría y término de búsqueda activos, y la lista filtrada.
+- `useCart` — estado del carrito con `useState` (agregar, quitar, contador, total). No persiste entre recargas (demostración en memoria, sin backend).
+- `ProductList` / `ProductCard` — catálogo con renderizado condicional (carga, error con botón "Reintentar", sin resultados, o grilla de productos) y detalle expandible por producto.
+- `SearchForm` / `CategoryMenu` — buscador (`onSubmit`/`onChange`) y dropdown de categorías (`onClick`), conectados al mismo estado que filtra el catálogo.
 
 ## Componentes Bootstrap usados
 
@@ -51,12 +62,27 @@ Los módulos ES y la carga de archivos JSON requieren un servidor local. Tambié
 5. **Offcanvas**: panel lateral del carrito de compras, abierto desde el navbar.
 6. **Dropdown**: filtro de categorías del navbar.
 
-## Funcionalidades JavaScript
+## Funcionalidades
 
-- **Catálogo dinámico**: los módulos de `js/` cargan `assets/data/products.json` vía Fetch API (`async/await` + `try/catch`), muestran un indicador de carga y, si la solicitud falla, un mensaje de error amigable con botón de reintentar.
-- **Búsqueda y categorías**: el formulario del navbar (evento `submit`) filtra el catálogo por nombre, y el dropdown de categorías (evento `click`) filtra por categoría; ambos filtros se combinan.
-- **Carrito de compras**: cada card tiene un botón "Agregar al carrito" (evento `click`) que suma el producto al carrito en memoria (o incrementa su cantidad si ya estaba agregado). El resumen —cantidad, subtotal y total— se muestra dinámicamente en el panel Offcanvas del navbar, junto con la opción de quitar productos. **Limitación conocida**: el carrito no persiste entre recargas de página (no usa `localStorage`), ya que es una demostración de estado en memoria sin backend.
-- **Detalle de producto y resaltado**: se mantienen igual que antes (click para expandir detalle, mouseover/mouseout para resaltar la card), ahora enganchados por delegación de eventos sobre las cards generadas dinámicamente.
+- **Catálogo dinámico** (React): `useCatalog` carga `assets/data/products.json` vía Fetch API dentro de un `useEffect`, muestra un indicador de carga y, si la solicitud falla, un mensaje de error amigable con botón de reintentar.
+- **Búsqueda y categorías** (React): el formulario del navbar (`onSubmit`/`onChange`) filtra el catálogo por nombre, y el dropdown de categorías (`onClick`) filtra por categoría; ambos filtros se combinan.
+- **Carrito de compras** (React): cada card tiene un botón "Agregar al carrito" que suma el producto al carrito (`useState`) o incrementa su cantidad si ya estaba agregado. El resumen —cantidad, subtotal y total— se muestra dinámicamente en el panel Offcanvas del navbar, junto con la opción de quitar productos. **Limitación conocida**: el carrito no persiste entre recargas de página (no usa `localStorage`), ya que es una demostración de estado en memoria sin backend.
+- **Detalle de producto y resaltado** (React): estado local del componente `ProductCard` (click para expandir detalle, mouseover/mouseout para resaltar la card).
+- **Puntuaciones y contacto** (JavaScript vainilla, sin cambios): `js/modules/scores.js` carga `assets/data/scores.json` vía Fetch API con los mismos estados de carga/error; `js/modules/contact-form.js` valida el formulario de contacto en el evento `submit`.
+
+## Capturas
+
+<p>
+  <img src="public/assets/screenshots/e2e-carga-inicial-desktop.jpg" width="280" alt="Catálogo cargado" />
+  <img src="public/assets/screenshots/e2e-categorias-desktop.jpg" width="280" alt="Filtro por categoría aplicado" />
+  <img src="public/assets/screenshots/e2e-carrito-desktop.jpg" width="280" alt="Carrito con productos" />
+</p>
+<p>
+  <img src="public/assets/screenshots/react-carrito-vacio.jpg" width="280" alt="Carrito vacío" />
+  <img src="public/assets/screenshots/e2e-error-carga-desktop.jpg" width="280" alt="Estado de error del catálogo" />
+</p>
+
+Más capturas (búsqueda, contacto, responsividad) en [docs/testing-evidence.md](docs/testing-evidence.md).
 
 ## Estructura semántica
 
