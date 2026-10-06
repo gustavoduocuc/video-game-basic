@@ -42,7 +42,16 @@ npm install
 npm run dev       # servidor de desarrollo con recarga en caliente
 npm run build     # build de producción en dist/
 npm run preview   # sirve el build de producción localmente
+npm run deploy    # build + publicación en GitHub Pages
 ```
+
+## Despliegue
+
+El código fuente vive en la rama `main`. La rama `gh-pages` contiene solo el sitio compilado y es la que sirve GitHub Pages; no se edita a mano.
+
+`npm run deploy` ejecuta `npm run build` y luego usa el paquete [`gh-pages`](https://www.npmjs.com/package/gh-pages) para publicar el contenido de `dist/` en la raíz de la rama `gh-pages`, reemplazando la versión anterior. Como `vite.config.js` usa `base: './'` (rutas relativas), el build funciona bajo el sub-path `/video-game-basic/` sin configuración adicional.
+
+Antes de desplegar, conviene revisar el build localmente con `npm run build && npm run preview`.
 
 ## Arquitectura de la app de React
 
