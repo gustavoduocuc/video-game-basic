@@ -22,3 +22,29 @@
   border-top: 2px solid var(--color-primary);
   padding-top: 0.75rem;
 }
+
+.cart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.cart-empty .bi {
+  font-size: 1.75rem;
+  color: var(--color-primary);
+}
+
+.cart-empty p {
+  margin-bottom: 0;
+}
+
+/* Toast de confirmación al agregar al carrito: esquina inferior derecha, bajo el offcanvas (1045). */
+.cart-toast-container {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1040;
+  max-width: calc(100vw - 2rem);
+}
