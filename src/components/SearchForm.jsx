@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function SearchForm({ onSearch }) {
+export function SearchForm({ onSearch, onSubmitted }) {
   const [inputValue, setInputValue] = useState("");
 
   const handleChange = (event) => {
@@ -12,6 +12,7 @@ export function SearchForm({ onSearch }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     onSearch(inputValue.trim().toLowerCase());
+    onSubmitted?.();
   };
 
   return (

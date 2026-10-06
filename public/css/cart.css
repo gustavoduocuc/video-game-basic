@@ -39,3 +39,12 @@
 .cart-empty p {
   margin-bottom: 0;
 }
+
+/* Toast de confirmación al agregar al carrito: esquina inferior derecha, bajo el offcanvas (1045). */
+.cart-toast-container {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1040;
+  max-width: calc(100vw - 2rem);
+}
