@@ -3,20 +3,15 @@ import { createPortal } from "react-dom";
 import { useCatalog } from "./hooks/useCatalog.js";
 import { useCart } from "./hooks/useCart.js";
 import { useToast } from "./hooks/useToast.js";
-import { SearchForm } from "./components/SearchForm.jsx";
-import { CategoryMenu } from "./components/CategoryMenu.jsx";
+import { Navbar } from "./components/Navbar.jsx";
 import { ProductList } from "./components/ProductList.jsx";
-import { CartBadge } from "./components/CartBadge.jsx";
 import { CartToast } from "./components/CartToast.jsx";
 import { CartOffcanvasBody } from "./components/CartOffcanvasBody.jsx";
 
 // Nodos ya presentes en index.html: React los llena vía portales, sin desmontar
-// el resto de la página estática (navbar, carrusel, categorías, puntuaciones, contacto).
+// el resto de la página estática (carrusel, ofertas, puntuaciones).
 const MOUNT_IDS = {
-  searchRoot: "navbar-search-root",
-  categoryMenu: "navbar-category-menu",
-  categoryIcon: "category-filter-icon-root",
-  cartCount: "cart-count",
+  headerRoot: "site-header-root",
   catalogRoot: "catalogo-root",
   cartOffcanvasRoot: "cart-offcanvas-root",
   cartToastRoot: "cart-toast-root",
@@ -71,29 +66,17 @@ export function StorefrontApp() {
 
   return (
     <>
-      {mounts.searchRoot &&
-        createPortal((
-          <SearchForm
+      {mounts.headerRoot &&
+        createPortal(
+          <Navbar
+            category={catalog.category}
+            onSelectCategory={catalog.setCategory}
+            totalItems={cart.totalItems}
             onSearch={catalog.setSearchTerm}
-            onSubmitted={() => setSearchSubmitCount((count) => count + 1)}
-          />
-        ), mounts.searchRoot)}
-
-      {mounts.categoryMenu &&
-        createPortal(
-          <CategoryMenu category={catalog.category} onSelectCategory={catalog.setCategory} />,
-          mounts.categoryMenu
+            onSearchSubmitted={() => setSearchSubmitCount((count) => count + 1)}
+          />,
+          mounts.headerRoot
         )}
-
-      {mounts.categoryIcon &&
-        createPortal(
-          catalog.category ? (
-            <i id="category-filter-icon" className="bi bi-funnel-fill ms-1" aria-hidden="true"></i>
-          ) : null,
-          mounts.categoryIcon
-        )}
-
-      {mounts.cartCount && createPortal(<CartBadge totalItems={cart.totalItems} />, mounts.cartCount)}
 
       {mounts.catalogRoot &&
         createPortal(
