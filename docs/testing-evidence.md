@@ -15,13 +15,17 @@ Este documento reúne la evidencia de las pruebas realizadas sobre el sitio Game
 1. [Carga inicial de productos](#1-carga-inicial-de-productos)
 2. [Búsqueda de productos mediante el formulario](#2-busqueda-de-productos-mediante-el-formulario)
 3. [Navegación por categorías](#3-navegacion-por-categorias)
-4. [Agregar productos al carrito y resumen dinámico](#4-agregar-productos-al-carrito-y-resumen-dinamico)
-5. [Responsividad del menú de navegación](#5-responsividad-del-menu-de-navegacion)
-6. [Responsividad del pie de página](#6-responsividad-del-pie-de-pagina)
-7. [Caso de error A: producto no encontrado tras cambiar su nombre en los datos](#7-caso-de-error-a-producto-no-encontrado-tras-cambiar-su-nombre-en-los-datos)
-8. [Caso de error B: fallo en la carga del catálogo](#8-caso-de-error-b-fallo-en-la-carga-del-catalogo)
-9. [Formulario de contacto: campos requeridos incompletos](#9-formulario-de-contacto-campos-requeridos-incompletos)
-10. [Formulario de contacto: envío exitoso](#10-formulario-de-contacto-envio-exitoso)
+4. [Filtro desde los accesos de categorías](#4-filtro-desde-los-accesos-de-categorias)
+5. [Agregar productos al carrito y resumen dinámico](#5-agregar-productos-al-carrito-y-resumen-dinamico)
+6. [Agregar videojuego: campos requeridos incompletos](#6-agregar-videojuego-campos-requeridos-incompletos)
+7. [Agregar videojuego: alta exitosa](#7-agregar-videojuego-alta-exitosa)
+8. [Eliminar videojuegos del catálogo](#8-eliminar-videojuegos-del-catalogo)
+9. [Responsividad del menú de navegación](#9-responsividad-del-menu-de-navegacion)
+10. [Responsividad de la sección de contacto y del pie de página](#10-responsividad-de-la-seccion-de-contacto-y-del-pie-de-pagina)
+11. [Caso de error A: producto no encontrado tras cambiar su nombre en los datos](#11-caso-de-error-a-producto-no-encontrado-tras-cambiar-su-nombre-en-los-datos)
+12. [Caso de error B: fallo en la carga del catálogo](#12-caso-de-error-b-fallo-en-la-carga-del-catalogo)
+13. [Formulario de contacto: campos requeridos incompletos](#13-formulario-de-contacto-campos-requeridos-incompletos)
+14. [Formulario de contacto: envío exitoso](#14-formulario-de-contacto-envio-exitoso)
 
 ## 1. Carga inicial de productos
 
@@ -47,7 +51,15 @@ Al elegir la categoría "Consolas" en el menú de categorías, el catálogo se f
 | --- | --- | --- |
 | <img src="../public/assets/screenshots/e2e-categorias-desktop.jpg" width="300" alt="Navegación por categorías - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-categorias-tablet.jpg" width="300" alt="Navegación por categorías - Tablet" /> | <img src="../public/assets/screenshots/e2e-categorias-mobile.jpg" width="300" alt="Navegación por categorías - Mobile" /> |
 
-## 4. Agregar productos al carrito y resumen dinámico
+## 4. Filtro desde los accesos de categorías
+
+Al elegir una categoría en la sección "Categorías de productos", el catálogo se filtra, el acceso queda marcado y se mantiene sincronizado con el menú de navegación.
+
+| Web (Desktop) | Tablet | Mobile |
+| --- | --- | --- |
+| <img src="../public/assets/screenshots/e2e-categorias-chips-desktop.jpg" width="300" alt="Filtro desde los accesos de categorías - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-categorias-chips-tablet.jpg" width="300" alt="Filtro desde los accesos de categorías - Tablet" /> | <img src="../public/assets/screenshots/e2e-categorias-chips-mobile.jpg" width="300" alt="Filtro desde los accesos de categorías - Mobile" /> |
+
+## 5. Agregar productos al carrito y resumen dinámico
 
 Al agregar productos, el panel del carrito muestra cantidades, subtotales y el total actualizados.
 
@@ -55,7 +67,31 @@ Al agregar productos, el panel del carrito muestra cantidades, subtotales y el t
 | --- | --- | --- |
 | <img src="../public/assets/screenshots/e2e-carrito-desktop.jpg" width="300" alt="Agregar productos al carrito y resumen dinámico - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-carrito-tablet.jpg" width="300" alt="Agregar productos al carrito y resumen dinámico - Tablet" /> | <img src="../public/assets/screenshots/e2e-carrito-mobile.jpg" width="300" alt="Agregar productos al carrito y resumen dinámico - Mobile" /> |
 
-## 5. Responsividad del menú de navegación
+## 6. Agregar videojuego: campos requeridos incompletos
+
+Al intentar agregar un videojuego con el formulario vacío, el sitio marca los campos requeridos, informa que deben revisarse y no modifica el catálogo.
+
+| Web (Desktop) | Tablet | Mobile |
+| --- | --- | --- |
+| <img src="../public/assets/screenshots/e2e-alta-error-desktop.jpg" width="300" alt="Agregar videojuego: campos requeridos incompletos - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-alta-error-tablet.jpg" width="300" alt="Agregar videojuego: campos requeridos incompletos - Tablet" /> | <img src="../public/assets/screenshots/e2e-alta-error-mobile.jpg" width="300" alt="Agregar videojuego: campos requeridos incompletos - Mobile" /> |
+
+## 7. Agregar videojuego: alta exitosa
+
+Al completar nombre, categoría, precio y descripción, el nuevo videojuego aparece en el catálogo con una imagen genérica y respeta el filtro de categoría activo.
+
+| Web (Desktop) | Tablet | Mobile |
+| --- | --- | --- |
+| <img src="../public/assets/screenshots/e2e-alta-exito-desktop.jpg" width="300" alt="Agregar videojuego: alta exitosa - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-alta-exito-tablet.jpg" width="300" alt="Agregar videojuego: alta exitosa - Tablet" /> | <img src="../public/assets/screenshots/e2e-alta-exito-mobile.jpg" width="300" alt="Agregar videojuego: alta exitosa - Mobile" /> |
+
+## 8. Eliminar videojuegos del catálogo
+
+Al eliminar videojuegos desde su tarjeta, desaparecen del catálogo y del carrito, y el sitio confirma la eliminación.
+
+| Web (Desktop) | Tablet | Mobile |
+| --- | --- | --- |
+| <img src="../public/assets/screenshots/e2e-baja-desktop.jpg" width="300" alt="Eliminar videojuegos del catálogo - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-baja-tablet.jpg" width="300" alt="Eliminar videojuegos del catálogo - Tablet" /> | <img src="../public/assets/screenshots/e2e-baja-mobile.jpg" width="300" alt="Eliminar videojuegos del catálogo - Mobile" /> |
+
+## 9. Responsividad del menú de navegación
 
 El menú de navegación se muestra completo en Web y se recoge tras el botón de menú en Tablet y Mobile.
 
@@ -63,15 +99,15 @@ El menú de navegación se muestra completo en Web y se recoge tras el botón de
 | --- | --- | --- |
 | <img src="../public/assets/screenshots/e2e-responsividad-navbar-desktop.jpg" width="300" alt="Responsividad del menú de navegación - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-responsividad-navbar-tablet.jpg" width="300" alt="Responsividad del menú de navegación - Tablet" /> | <img src="../public/assets/screenshots/e2e-responsividad-navbar-mobile.jpg" width="300" alt="Responsividad del menú de navegación - Mobile" /> |
 
-## 6. Responsividad del pie de página
+## 10. Responsividad de la sección de contacto y del pie de página
 
-El pie de página muestra el formulario de contacto, el correo y los enlaces a redes sociales en todas las resoluciones.
+La sección de contacto muestra su formulario y el pie de página muestra el correo y los enlaces a redes sociales en todas las resoluciones.
 
 | Web (Desktop) | Tablet | Mobile |
 | --- | --- | --- |
-| <img src="../public/assets/screenshots/e2e-responsividad-footer-desktop.jpg" width="300" alt="Responsividad del pie de página - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-responsividad-footer-tablet.jpg" width="300" alt="Responsividad del pie de página - Tablet" /> | <img src="../public/assets/screenshots/e2e-responsividad-footer-mobile.jpg" width="300" alt="Responsividad del pie de página - Mobile" /> |
+| <img src="../public/assets/screenshots/e2e-responsividad-footer-desktop.jpg" width="300" alt="Responsividad de la sección de contacto y del pie de página - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-responsividad-footer-tablet.jpg" width="300" alt="Responsividad de la sección de contacto y del pie de página - Tablet" /> | <img src="../public/assets/screenshots/e2e-responsividad-footer-mobile.jpg" width="300" alt="Responsividad de la sección de contacto y del pie de página - Mobile" /> |
 
-## 7. Caso de error A: producto no encontrado tras cambiar su nombre en los datos
+## 11. Caso de error A: producto no encontrado tras cambiar su nombre en los datos
 
 Se cambió temporalmente el nombre de un producto en los datos del catálogo; al buscar su nombre original el sitio informa de forma clara que no se encontraron productos.
 
@@ -79,7 +115,7 @@ Se cambió temporalmente el nombre de un producto en los datos del catálogo; al
 | --- | --- | --- |
 | <img src="../public/assets/screenshots/e2e-error-sin-coincidencia-desktop.jpg" width="300" alt="Caso de error A: producto no encontrado tras cambiar su nombre en los datos - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-error-sin-coincidencia-tablet.jpg" width="300" alt="Caso de error A: producto no encontrado tras cambiar su nombre en los datos - Tablet" /> | <img src="../public/assets/screenshots/e2e-error-sin-coincidencia-mobile.jpg" width="300" alt="Caso de error A: producto no encontrado tras cambiar su nombre en los datos - Mobile" /> |
 
-## 8. Caso de error B: fallo en la carga del catálogo
+## 12. Caso de error B: fallo en la carga del catálogo
 
 Se simuló temporalmente una falla en los datos del catálogo; el sitio muestra un mensaje amigable con el botón "Reintentar" y el resto de la página sigue funcionando.
 
@@ -87,7 +123,7 @@ Se simuló temporalmente una falla en los datos del catálogo; el sitio muestra 
 | --- | --- | --- |
 | <img src="../public/assets/screenshots/e2e-error-carga-desktop.jpg" width="300" alt="Caso de error B: fallo en la carga del catálogo - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-error-carga-tablet.jpg" width="300" alt="Caso de error B: fallo en la carga del catálogo - Tablet" /> | <img src="../public/assets/screenshots/e2e-error-carga-mobile.jpg" width="300" alt="Caso de error B: fallo en la carga del catálogo - Mobile" /> |
 
-## 9. Formulario de contacto: campos requeridos incompletos
+## 13. Formulario de contacto: campos requeridos incompletos
 
 Al intentar enviar el formulario vacío, el sitio marca los campos requeridos e informa que deben revisarse antes de continuar.
 
@@ -95,7 +131,7 @@ Al intentar enviar el formulario vacío, el sitio marca los campos requeridos e 
 | --- | --- | --- |
 | <img src="../public/assets/screenshots/e2e-contacto-error-desktop.jpg" width="300" alt="Formulario de contacto: campos requeridos incompletos - Web (Desktop)" /> | <img src="../public/assets/screenshots/e2e-contacto-error-tablet.jpg" width="300" alt="Formulario de contacto: campos requeridos incompletos - Tablet" /> | <img src="../public/assets/screenshots/e2e-contacto-error-mobile.jpg" width="300" alt="Formulario de contacto: campos requeridos incompletos - Mobile" /> |
 
-## 10. Formulario de contacto: envío exitoso
+## 14. Formulario de contacto: envío exitoso
 
 Al completar nombre, correo electrónico y mensaje con datos válidos, el sitio confirma que el mensaje fue recibido.
 
