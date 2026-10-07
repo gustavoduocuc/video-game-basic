@@ -4,6 +4,16 @@
   background-color: var(--color-bg-alt);
 }
 
+.product-form-panel {
+  margin-bottom: 1.5rem;
+}
+
+.product-form {
+  border-color: var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-bg-alt);
+}
+
 /* Mensajes de estado de los formularios (éxito / error) */
 #contact-form-status,
 #product-form-status {

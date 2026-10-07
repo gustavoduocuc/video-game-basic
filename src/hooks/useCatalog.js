@@ -39,6 +39,15 @@ export function useCatalog() {
 
   const retry = useCallback(() => setReloadToken((token) => token + 1), []);
 
+  // Altas y bajas solo en memoria: al recargar vuelve el contenido de products.json.
+  const addProduct = useCallback((product) => {
+    setProducts((current) => [...current, product]);
+  }, []);
+
+  const removeProduct = useCallback((productId) => {
+    setProducts((current) => current.filter((product) => product.id !== productId));
+  }, []);
+
   const filteredProducts = useMemo(() => {
     const term = searchTerm.trim().toLowerCase();
     return products.filter((product) => {
@@ -57,5 +66,7 @@ export function useCatalog() {
     setCategory,
     setSearchTerm,
     retry,
+    addProduct,
+    removeProduct,
   };
 }

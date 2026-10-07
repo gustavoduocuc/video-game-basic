@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState } from "react";
 
-export function ProductCard({ product, onAddToCart, isInCart }) {
+export function ProductCard({ product, onAddToCart, onRemove, isInCart }) {
   // null = detalle nunca solicitado (no existe aún en el DOM); true/false = visible/oculto.
   const [detailOpen, setDetailOpen] = useState(null);
   const [isHighlighted, setIsHighlighted] = useState(false);
@@ -87,6 +87,15 @@ export function ProductCard({ product, onAddToCart, isInCart }) {
             onClick={() => onAddToCart(product)}
           >
             {isInCart ? "En el carrito ✓" : "Agregar al carrito"}
+          </button>
+          <button
+            type="button"
+            className="btn btn-outline-danger btn-sm mt-2"
+            aria-label={`Eliminar ${product.name} del catálogo`}
+            onClick={() => onRemove(product)}
+          >
+            <i className="bi bi-trash me-1" aria-hidden="true"></i>
+            Eliminar
           </button>
         </div>
       </article>

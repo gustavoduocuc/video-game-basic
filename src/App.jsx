@@ -4,6 +4,7 @@ import { useCatalog } from "./hooks/useCatalog.js";
 import { useCart } from "./hooks/useCart.js";
 import { useToast } from "./hooks/useToast.js";
 import { Navbar } from "./components/Navbar.jsx";
+import { ProductForm } from "./components/ProductForm.jsx";
 import { ProductList } from "./components/ProductList.jsx";
 import { CartToast } from "./components/CartToast.jsx";
 import { CartOffcanvasBody } from "./components/CartOffcanvasBody.jsx";
@@ -57,6 +58,17 @@ export function StorefrontApp() {
     [addToCart, showToast]
   );
 
+  const { addProduct, removeProduct } = catalog;
+  const { removeFromCart } = cart;
+  const handleRemoveProduct = useCallback(
+    (product) => {
+      removeProduct(product.id);
+      removeFromCart(product.id);
+      showToast(`${product.name} se eliminó del catálogo`);
+    },
+    [removeProduct, removeFromCart, showToast]
+  );
+
   const portals = Object.entries(MOUNT_IDS)
     .map(([key, id]) => [key, document.getElementById(id)])
     .filter(([, el]) => el !== null);
@@ -82,16 +94,20 @@ export function StorefrontApp() {
 
       {mounts.catalogRoot &&
         createPortal(
-          <ProductList
-            status={catalog.status}
-            filteredProducts={catalog.filteredProducts}
-            category={catalog.category}
-            searchTerm={catalog.searchTerm}
-            onClearCategory={() => catalog.setCategory("")}
-            onAddToCart={handleAddToCart}
-            isInCart={cart.isInCart}
-            onRetry={catalog.retry}
-          />,
+          <>
+            {catalog.status === "ready" && <ProductForm onAddProduct={addProduct} />}
+            <ProductList
+              status={catalog.status}
+              filteredProducts={catalog.filteredProducts}
+              category={catalog.category}
+              searchTerm={catalog.searchTerm}
+              onClearCategory={() => catalog.setCategory("")}
+              onAddToCart={handleAddToCart}
+              onRemoveProduct={handleRemoveProduct}
+              isInCart={cart.isInCart}
+              onRetry={catalog.retry}
+            />
+          </>,
           mounts.catalogRoot
         )}
 

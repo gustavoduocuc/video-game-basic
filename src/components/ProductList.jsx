@@ -8,6 +8,7 @@ export function ProductList({
   searchTerm,
   onClearCategory,
   onAddToCart,
+  onRemoveProduct,
   isInCart,
   onRetry,
 }) {
@@ -54,6 +55,7 @@ export function ProductList({
               key={product.id}
               product={product}
               onAddToCart={onAddToCart}
+              onRemove={onRemoveProduct}
               isInCart={isInCart(product.id)}
             />
           ))}
