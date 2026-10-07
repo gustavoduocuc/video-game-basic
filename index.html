@@ -248,36 +248,32 @@
       </div>
     </section>
 
+    <!-- =========================================================
+         Contacto — formulario renderizado por React (ContactForm)
+         Propósito: validar nombre, correo y mensaje antes de enviar
+         ========================================================= -->
+    <section id="contacto" class="section contact-section" aria-labelledby="contacto-titulo">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-8 col-lg-6">
+            <h2 id="contacto-titulo">Contacto</h2>
+            <p>¿Tienes dudas sobre tu pedido? Escríbenos y te responderemos a la brevedad.</p>
+            <div id="contact-form-root"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer id="contacto" class="site-footer">
+  <footer class="site-footer">
     <div class="container">
-      <div class="row g-4 align-items-start">
-        <div class="col-12 col-md-7">
-          <h2>Contacto y redes</h2>
-          <p>¿Tienes dudas sobre tu pedido? Escríbenos o visítanos en nuestras redes sociales.</p>
-
-          <form id="contact-form" novalidate>
-            <div class="mb-3">
-              <label for="contact-name" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="contact-name" name="name" required />
-              <p class="invalid-feedback" data-error-for="contact-name">Por favor ingresa tu nombre.</p>
-            </div>
-            <div class="mb-3">
-              <label for="contact-email" class="form-label">Correo electrónico</label>
-              <input type="email" class="form-control" id="contact-email" name="email" required />
-              <p class="invalid-feedback" data-error-for="contact-email">Ingresa un correo electrónico válido.</p>
-            </div>
-            <div class="mb-3">
-              <label for="contact-message" class="form-label">Mensaje</label>
-              <textarea class="form-control" id="contact-message" name="message" rows="3" required></textarea>
-              <p class="invalid-feedback" data-error-for="contact-message">Por favor escribe tu mensaje.</p>
-            </div>
-            <button type="submit" class="btn btn-primary">Enviar mensaje</button>
-            <p id="contact-form-status" class="mt-3" role="status" aria-live="polite"></p>
-          </form>
+      <div class="row g-4 align-items-center">
+        <div class="col-12 col-md-6">
+          <h2 class="h5 mb-1">Síguenos</h2>
+          <p class="mb-0">Encuentra novedades y lanzamientos en nuestras redes sociales.</p>
         </div>
-        <div class="col-12 col-md-5">
+        <div class="col-12 col-md-6">
           <ul class="social-list list-unstyled d-flex flex-wrap gap-2 justify-content-md-end mb-0">
             <li><a href="mailto:contacto@gamevault.cl">contacto@gamevault.cl</a></li>
             <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
@@ -298,7 +294,7 @@
     crossorigin="anonymous"
   ></script>
 
-  <!-- Interactividad propia del sitio que sigue siendo vainilla: puntuaciones y contacto -->
+  <!-- Interactividad propia del sitio que sigue siendo vainilla: puntuaciones -->
   <script type="module" src="js/main.js"></script>
 
   <!-- App de React: catálogo, filtros y carrito (ver src/main.jsx) -->

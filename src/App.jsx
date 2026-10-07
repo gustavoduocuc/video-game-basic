@@ -7,6 +7,7 @@ import { Navbar } from "./components/Navbar.jsx";
 import { ProductList } from "./components/ProductList.jsx";
 import { CartToast } from "./components/CartToast.jsx";
 import { CartOffcanvasBody } from "./components/CartOffcanvasBody.jsx";
+import { ContactForm } from "./components/ContactForm.jsx";
 
 // Nodos ya presentes en index.html: React los llena vía portales, sin desmontar
 // el resto de la página estática (carrusel, ofertas, puntuaciones).
@@ -15,6 +16,7 @@ const MOUNT_IDS = {
   catalogRoot: "catalogo-root",
   cartOffcanvasRoot: "cart-offcanvas-root",
   cartToastRoot: "cart-toast-root",
+  contactRoot: "contact-form-root",
 };
 
 const SEARCH_RESULTS_ID = "catalogo-resultado";
@@ -105,6 +107,8 @@ export function StorefrontApp() {
 
       {mounts.cartToastRoot &&
         createPortal(<CartToast toast={toast.toast} onClose={toast.dismiss} />, mounts.cartToastRoot)}
+
+      {mounts.contactRoot && createPortal(<ContactForm />, mounts.contactRoot)}
     </>
   );
 }
