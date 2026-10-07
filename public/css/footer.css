@@ -1,4 +1,4 @@
-/* Footer: contacto, redes, copyright y estado del formulario. */
+/* Footer: correo, redes y copyright. */
 /* -------------------- 10. Footer -------------------- */
 .site-footer {
   background-color: var(--color-bg-alt);
@@ -29,10 +29,4 @@
   color: var(--color-text-muted);
   font-size: 0.85rem;
   margin-top: 1.5rem;
-}
-
-/* Formulario de contacto: estado de validación gestionado por contact-form.js */
-#contact-form-status {
-  font-weight: 600;
-  min-height: 1.5rem;
 }
