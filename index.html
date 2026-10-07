@@ -23,104 +23,13 @@
 <body>
 
   <!-- =========================================================
-       Navbar responsiva (Bootstrap)
+       Navbar responsiva (Bootstrap) renderizada por React (Navbar)
        Propósito: navegación principal con colapso en móvil
-       (navbar-expand-lg + navbar-toggler / collapse)
+       (navbar-expand-lg + navbar-toggler / collapse) y buscador
        ========================================================= -->
-  <header class="site-header">
-    <nav class="navbar navbar-expand-lg" aria-label="Navegación principal">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-          <img
-            class="logo"
-            src="assets/logo.svg"
-            alt="Logotipo de GameVault: un joystick estilizado dentro de un escudo"
-            width="120"
-            height="60"
-          />
-          <span class="fw-bold">GameVault</span>
-        </a>
+  <header class="site-header" id="site-header-root"></header>
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNav"
-          aria-controls="mainNav"
-          aria-expanded="false"
-          aria-label="Abrir o cerrar menú de navegación"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#destacados">Destacados</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#catalogo">Catálogo</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#ofertas">Ofertas</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#categorias"
-                id="navbarCategoriesDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Categorías
-                <!-- Ícono de filtro activo proyectado por React (CategoryMenu) -->
-                <span id="category-filter-icon-root"></span>
-              </a>
-              <!-- Contenido (li) proyectado por React (CategoryMenu) vía createPortal -->
-              <ul class="dropdown-menu" aria-labelledby="navbarCategoriesDropdown" id="navbar-category-menu"></ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#puntuaciones">Puntuaciones</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contacto">Contacto</a>
-            </li>
-          </ul>
-
-          <button
-            type="button"
-            class="btn btn-primary position-relative d-block ms-auto"
-            id="cart-toggle-button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#cartOffcanvas"
-            aria-controls="cartOffcanvas"
-            aria-label="Abrir carrito de compras"
-          >
-            <!-- Contador proyectado por React (CartBadge): estilo e ícono según haya productos -->
-            <span id="cart-count" aria-live="polite"></span>
-          </button>
-        </div>
-      </div>
-    </nav>
-
-    <!-- =========================================================
-         Barra de búsqueda del header
-         Propósito: centralizada en su propia fila, fuera del flujo
-         de la navbar, para que no compita por espacio horizontal
-         con los enlaces/categorías/carrito en anchos intermedios
-         (tablet / laptop) y así evitar overflow horizontal.
-         ========================================================= -->
-    <div class="site-search-bar">
-      <div class="container">
-        <!-- Formulario completo renderizado por React (SearchForm) -->
-        <div id="navbar-search-root"></div>
-      </div>
-    </div>
-
-  </header>
-
-  <section class="site-intro" aria-labelledby="site-title">
+  <section id="inicio" class="site-intro" aria-labelledby="site-title">
     <div class="container py-4">
       <h1 id="site-title" class="mb-2">GameVault</h1>
       <p class="lead mb-0">Tu tienda de confianza para videojuegos, consolas y accesorios.</p>
