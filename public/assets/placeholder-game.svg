@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="400" viewBox="0 0 300 400">
+  <defs>
+    <linearGradient id="bgPlaceholder" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="400" fill="url(#bgPlaceholder)"/>
+  <rect x="70" y="160" width="160" height="80" rx="40" fill="#e0e7ff"/>
+  <rect x="98" y="186" width="8" height="28" fill="#4338ca"/>
+  <rect x="88" y="196" width="28" height="8" fill="#4338ca"/>
+  <circle cx="190" cy="188" r="7" fill="#4338ca"/>
+  <circle cx="206" cy="204" r="7" fill="#4338ca"/>
+  <text x="150" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#e0e7ff" text-anchor="middle">GAMEVAULT</text>
+  <text x="150" y="300" font-family="Arial, sans-serif" font-size="16" fill="#c7d2fe" text-anchor="middle">Nuevo videojuego</text>
+</svg>
