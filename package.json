@@ -7,20 +7,15 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d dist",
-    "test:e2e": "playwright test",
-    "test:e2e:report": "playwright show-report",
-    "evidence": "tsx scripts/generate-evidence.ts"
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "react": "^19.3.0",
     "react-dom": "^19.3.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.63.0",
     "@vitejs/plugin-react": "^6.1.1",
     "gh-pages": "^6.3.0",
-    "tsx": "^4.23.15",
     "vite": "^8.3.1"
   }
 }
