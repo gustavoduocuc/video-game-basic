@@ -186,30 +186,15 @@
 
     <!-- =========================================================
          Categorías — Grid responsive
-         Propósito: chips de categoría en columnas adaptativas
+         Propósito: chips de categoría en columnas adaptativas que filtran el catálogo
          ========================================================= -->
     <section id="categorias" class="section" aria-labelledby="categorias-titulo">
       <div class="container">
         <h2 id="categorias-titulo">Categorías de productos</h2>
         <p>Encuentra rápidamente lo que buscas navegando por categoría.</p>
 
-        <div class="row g-3 mt-1">
-          <div class="col-6 col-md-4 col-lg">
-            <a class="category-chip d-block text-center" href="#cyber-odyssey">Videojuegos de acción</a>
-          </div>
-          <div class="col-6 col-md-4 col-lg">
-            <a class="category-chip d-block text-center" href="#reino-de-sombras">Videojuegos de aventura</a>
-          </div>
-          <div class="col-6 col-md-4 col-lg">
-            <a class="category-chip d-block text-center" href="#velocidad-extrema">Deportes y carreras</a>
-          </div>
-          <div class="col-6 col-md-4 col-lg">
-            <a class="category-chip d-block text-center" href="#nexcore-x">Consolas</a>
-          </div>
-          <div class="col-6 col-md-4 col-lg">
-            <a class="category-chip d-block text-center" href="#progrip">Accesorios y periféricos</a>
-          </div>
-        </div>
+        <!-- Chips renderizados por React (CategoryChips): aplican el filtro del catálogo -->
+        <div id="category-chips-root"></div>
       </div>
     </section>
 
