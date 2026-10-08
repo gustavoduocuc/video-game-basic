@@ -1,11 +1,5 @@
 import { CATEGORIES } from "../data/categories.js";
-
-function scrollToCatalog() {
-  const catalog = document.getElementById("catalogo");
-  if (!catalog) return;
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  catalog.scrollIntoView({ behavior: reduceMotion ? "instant" : "smooth", block: "start" });
-}
+import { scrollToSection } from "../utils/scroll.js";
 
 export function CategoryChips({ category, onSelectCategory }) {
   return (
@@ -20,7 +14,7 @@ export function CategoryChips({ category, onSelectCategory }) {
               aria-pressed={isActive}
               onClick={() => {
                 onSelectCategory(item.slug);
-                scrollToCatalog();
+                scrollToSection("catalogo");
               }}
             >
               {item.label}

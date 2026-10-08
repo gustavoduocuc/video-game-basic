@@ -11,6 +11,7 @@ import { CartOffcanvasBody } from "./components/CartOffcanvasBody.jsx";
 import { ContactForm } from "./components/ContactForm.jsx";
 import { CategoryChips } from "./components/CategoryChips.jsx";
 import { hasCatalogAdminAccess } from "./utils/permissions.js";
+import { scrollBehavior } from "./utils/scroll.js";
 
 // Nodos ya presentes en index.html: React los llena vía portales, sin desmontar
 // el resto de la página estática (carrusel, ofertas, puntuaciones).
@@ -33,10 +34,9 @@ function scrollToResultsIfHidden() {
   const navbarHeight = document.querySelector(NAVBAR_SELECTOR)?.getBoundingClientRect().height ?? 0;
   const top = target.getBoundingClientRect().top;
   if (top >= navbarHeight && top < window.innerHeight) return;
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   window.scrollTo({
     top: window.scrollY + top - navbarHeight - 16,
-    behavior: reduceMotion ? "instant" : "smooth",
+    behavior: scrollBehavior(),
   });
 }
 

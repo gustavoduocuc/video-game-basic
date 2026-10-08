@@ -1,4 +1,5 @@
 import { formatNumberCL } from "../utils/format.js";
+import { scrollToSection } from "../utils/scroll.js";
 
 // Con data-bs-dismiss, Bootstrap resuelve el destino por el href (#catalogo) en vez del offcanvas,
 // así que ni cierra el panel ni navega. Se cierra explícitamente y el scroll se hace al terminar
@@ -6,11 +7,7 @@ import { formatNumberCL } from "../utils/format.js";
 function closeCartAndGoToCatalog(event) {
   event.preventDefault();
   const panel = event.currentTarget.closest(".offcanvas");
-  const catalog = document.getElementById("catalogo");
-  if (!catalog) return;
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const scroll = () =>
-    catalog.scrollIntoView({ behavior: reduceMotion ? "instant" : "smooth", block: "start" });
+  const scroll = () => scrollToSection("catalogo");
   const instance = panel && window.bootstrap?.Offcanvas.getInstance(panel);
   if (!instance) return scroll();
   panel.addEventListener("hidden.bs.offcanvas", scroll, { once: true });
