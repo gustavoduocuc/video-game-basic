@@ -10,6 +10,16 @@ Este documento reúne la evidencia de las pruebas realizadas sobre el sitio Game
 | Tablet | 768 × 1024 |
 | Mobile | 412 × 839 |
 
+## Navegadores y dispositivos probados
+
+Todos los casos se ejecutaron en los siguientes navegadores. Las capturas de este documento corresponden a Google Chrome.
+
+| Navegador | Motor | Dispositivos y resoluciones |
+|-----------|-------|-----------------------------|
+| Google Chrome | Chromium | Web 1440 × 900, Tablet 768 × 1024, Mobile 412 × 839 |
+| Mozilla Firefox | Gecko | Web 1440 × 900 |
+| Safari | WebKit | Web 1440 × 900, iPhone 13 (390 × 664) |
+
 ## Casos evaluados
 
 1. [Carga inicial de productos](#1-carga-inicial-de-productos)
