@@ -29,20 +29,13 @@
        ========================================================= -->
   <header class="site-header" id="site-header-root"></header>
 
-  <section id="inicio" class="site-intro" aria-labelledby="site-title">
-    <div class="container py-4">
-      <h1 id="site-title" class="mb-2">GameVault</h1>
-      <p class="lead mb-0">Tu tienda de confianza para videojuegos, consolas y accesorios.</p>
-    </div>
-  </section>
-
   <!-- =========================================================
        Carrito de compras (Bootstrap Offcanvas)
        Propósito: panel lateral con el resumen dinámico del
        carrito (productos, cantidad, subtotal y total), poblado
        por JS sin recargar la página.
        ========================================================= -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" role="dialog" aria-labelledby="cartOffcanvasLabel">
     <div class="offcanvas-header">
       <h2 class="offcanvas-title h5" id="cartOffcanvasLabel">Tu carrito</h2>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
@@ -57,6 +50,13 @@
   <div id="cart-toast-root"></div>
 
   <main>
+
+    <section id="inicio" class="site-intro" aria-labelledby="site-title">
+      <div class="container py-4">
+        <h1 id="site-title" class="mb-2">GameVault</h1>
+        <p class="lead mb-0">Tu tienda de confianza para videojuegos, consolas y accesorios.</p>
+      </div>
+    </section>
 
     <!-- =========================================================
          Carrusel de destacados (Bootstrap Carousel)
