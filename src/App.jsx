@@ -10,6 +10,7 @@ import { CartToast } from "./components/CartToast.jsx";
 import { CartOffcanvasBody } from "./components/CartOffcanvasBody.jsx";
 import { ContactForm } from "./components/ContactForm.jsx";
 import { CategoryChips } from "./components/CategoryChips.jsx";
+import { hasCatalogAdminAccess } from "./utils/permissions.js";
 
 // Nodos ya presentes en index.html: React los llena vía portales, sin desmontar
 // el resto de la página estática (carrusel, ofertas, puntuaciones).
@@ -45,6 +46,8 @@ export function StorefrontApp() {
   const toast = useToast();
   // Se incrementa en cada submit; el efecto corre después de que el catálogo ya se re-renderizó.
   const [searchSubmitCount, setSearchSubmitCount] = useState(0);
+  // Se lee una vez al montar: activar el permiso en sessionStorage requiere recargar la página.
+  const [canManageCatalog] = useState(hasCatalogAdminAccess);
 
   useEffect(() => {
     if (searchSubmitCount > 0) scrollToResultsIfHidden();
@@ -97,7 +100,7 @@ export function StorefrontApp() {
       {mounts.catalogRoot &&
         createPortal(
           <>
-            {catalog.status === "ready" && <ProductForm onAddProduct={addProduct} />}
+            {canManageCatalog && catalog.status === "ready" && <ProductForm onAddProduct={addProduct} />}
             <ProductList
               status={catalog.status}
               filteredProducts={catalog.filteredProducts}
@@ -105,7 +108,7 @@ export function StorefrontApp() {
               searchTerm={catalog.searchTerm}
               onClearCategory={() => catalog.setCategory("")}
               onAddToCart={handleAddToCart}
-              onRemoveProduct={handleRemoveProduct}
+              onRemoveProduct={canManageCatalog ? handleRemoveProduct : null}
               isInCart={cart.isInCart}
               onRetry={catalog.retry}
             />
