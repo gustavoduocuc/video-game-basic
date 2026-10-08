@@ -88,15 +88,17 @@ export function ProductCard({ product, onAddToCart, onRemove, isInCart }) {
           >
             {isInCart ? "En el carrito ✓" : "Agregar al carrito"}
           </button>
-          <button
-            type="button"
-            className="btn btn-outline-danger btn-sm mt-2"
-            aria-label={`Eliminar ${product.name} del catálogo`}
-            onClick={() => onRemove(product)}
-          >
-            <i className="bi bi-trash me-1" aria-hidden="true"></i>
-            Eliminar
-          </button>
+          {onRemove && (
+            <button
+              type="button"
+              className="btn btn-outline-danger btn-sm mt-2"
+              aria-label={`Eliminar ${product.name} del catálogo`}
+              onClick={() => onRemove(product)}
+            >
+              <i className="bi bi-trash me-1" aria-hidden="true"></i>
+              Eliminar
+            </button>
+          )}
         </div>
       </article>
     </div>
