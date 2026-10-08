@@ -43,7 +43,7 @@
   color: var(--color-accent);
 }
 
-/* Bloque de detalle creado dinámicamente por catalog-interactions.js al hacer click */
+/* Bloque de detalle que ProductCard crea al primer click en "Ver detalles" */
 .product-detail {
   margin-top: 0.75rem;
   padding: 0.75rem;
@@ -58,7 +58,7 @@
   color: var(--color-text-muted);
 }
 
-/* Resaltado de card en mouseover/mouseout (ver catalog-interactions.js) */
+/* Resaltado de card en mouseover/mouseout (estado local de ProductCard) */
 .product-card.is-highlighted {
   border-color: var(--color-primary);
   box-shadow: 0 8px 20px rgba(79, 70, 229, 0.2);
