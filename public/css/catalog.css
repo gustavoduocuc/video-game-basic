@@ -43,18 +43,6 @@
   color: var(--color-accent);
 }
 
-.product-card .btn-primary {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
-}
-
-.product-card .btn-primary:hover,
-.product-card .btn-primary:focus-visible {
-  background-color: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
-  text-decoration: none;
-}
-
 /* Bloque de detalle creado dinámicamente por catalog-interactions.js al hacer click */
 .product-detail {
   margin-top: 0.75rem;

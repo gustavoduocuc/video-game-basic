@@ -13,6 +13,7 @@
   --color-surface: #ffffff;
   --color-primary: #4f46e5;
   --color-primary-dark: #4338ca;
+  --color-primary-darker: #3730a3;
   --color-accent: #4f46e5;
   --color-text: #111827;
   --color-text-muted: #4b5563;
@@ -30,6 +31,44 @@
   /* Alineación con Bootstrap primary para botones/badges */
   --bs-primary: #4f46e5;
   --bs-primary-rgb: 79, 70, 229;
+}
+
+/* Bootstrap compila los colores de cada botón en variables --bs-btn-* propias;
+   cambiar --bs-primary no los afecta, así que se reasignan aquí con el tema. */
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--color-primary);
+  --bs-btn-border-color: var(--color-primary);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--color-primary-dark);
+  --bs-btn-hover-border-color: var(--color-primary-dark);
+  --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--color-primary-darker);
+  --bs-btn-active-border-color: var(--color-primary-darker);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: var(--color-primary);
+  --bs-btn-disabled-border-color: var(--color-primary);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--color-primary);
+  --bs-btn-border-color: var(--color-primary);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--color-primary);
+  --bs-btn-hover-border-color: var(--color-primary);
+  --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--color-primary-dark);
+  --bs-btn-active-border-color: var(--color-primary-dark);
+  --bs-btn-disabled-color: var(--color-primary);
+  --bs-btn-disabled-border-color: var(--color-primary);
+}
+
+/* Los botones que son enlaces (<a class="btn">) no heredan el subrayado de a:hover */
+a.btn:hover,
+a.btn:focus-visible {
+  text-decoration: none;
 }
 
 /* -------------------- 3. Tipografía base -------------------- */
