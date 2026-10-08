@@ -69,7 +69,7 @@ Al agregar productos, el panel del carrito muestra cantidades, subtotales y el t
 
 ## 6. Agregar videojuego: campos requeridos incompletos
 
-Al intentar agregar un videojuego con el formulario vacío, el sitio marca los campos requeridos, informa que deben revisarse y no modifica el catálogo.
+Con el permiso de administración activo en la sesión, al intentar agregar un videojuego con el formulario vacío, el sitio marca los campos requeridos, informa que deben revisarse y no modifica el catálogo. Sin ese permiso, el botón "Agregar videojuego" no se muestra.
 
 | Web (Desktop) | Tablet | Mobile |
 | --- | --- | --- |
@@ -85,7 +85,7 @@ Al completar nombre, categoría, precio y descripción, el nuevo videojuego apar
 
 ## 8. Eliminar videojuegos del catálogo
 
-Al eliminar videojuegos desde su tarjeta, desaparecen del catálogo y del carrito, y el sitio confirma la eliminación.
+Con el permiso de administración activo en la sesión, al eliminar videojuegos desde su tarjeta, desaparecen del catálogo y del carrito, y el sitio confirma la eliminación. Sin ese permiso, el botón "Eliminar" no se muestra.
 
 | Web (Desktop) | Tablet | Mobile |
 | --- | --- | --- |
