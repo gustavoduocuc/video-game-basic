@@ -1,4 +1,4 @@
-// Categorías simuladas del navbar (mismas que hoy en index.html / filters.js).
+// Categorías del catálogo: las usan el menú del navbar, los chips y el formulario de alta.
 export const CATEGORIES = [
   { slug: "accion", label: "Videojuegos de acción" },
   { slug: "aventura", label: "Videojuegos de aventura" },
