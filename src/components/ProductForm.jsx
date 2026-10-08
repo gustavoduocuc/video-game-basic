@@ -1,57 +1,36 @@
 import { useState } from "react";
 import { CATEGORIES } from "../data/categories.js";
+import { useForm } from "../hooks/useForm.js";
 import { buildProduct } from "../utils/product.js";
-import { hasErrors, validateProduct } from "../utils/validation.js";
+import { validateProduct } from "../utils/validation.js";
 
 const FORM_ID = "product-form";
 const EMPTY_VALUES = { name: "", categorySlug: "", price: "", description: "", image: "" };
-const INITIAL_STATE = { isOpen: false, values: EMPTY_VALUES, errors: {}, status: null };
 
 export function ProductForm({ onAddProduct }) {
-  const [form, setForm] = useState(INITIAL_STATE);
+  const [isOpen, setIsOpen] = useState(false);
+  const form = useForm(EMPTY_VALUES, validateProduct);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setForm((prev) => ({ ...prev, values: { ...prev.values, [name]: value } }));
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const errors = validateProduct(form.values);
-
-    if (hasErrors(errors)) {
-      setForm((prev) => ({
-        ...prev,
-        errors,
-        status: { isSuccess: false, message: "Revisa los campos marcados antes de agregar el videojuego." },
-      }));
-      return;
-    }
-
-    const product = buildProduct(form.values);
-    onAddProduct(product);
-    setForm((prev) => ({
-      ...prev,
-      values: EMPTY_VALUES,
-      errors: {},
-      status: { isSuccess: true, message: `${product.name} se agregó al catálogo.` },
-    }));
-  };
-
-  const toggleOpen = () => setForm((prev) => ({ ...prev, isOpen: !prev.isOpen }));
-  const fieldClass = (field, base = "form-control") => `${base}${form.errors[field] ? " is-invalid" : ""}`;
-  const statusClass = form.status ? (form.status.isSuccess ? " text-success" : " text-danger") : "";
+  const handleSubmit = (event) =>
+    form.submit(event, {
+      invalidMessage: "Revisa los campos marcados antes de agregar el videojuego.",
+      onValid: (values) => {
+        const product = buildProduct(values);
+        onAddProduct(product);
+        return `${product.name} se agregó al catálogo.`;
+      },
+    });
 
   return (
     <div className="product-form-panel">
       <button
         type="button"
         className="btn btn-outline-primary"
-        aria-expanded={form.isOpen}
+        aria-expanded={isOpen}
         aria-controls={FORM_ID}
-        onClick={toggleOpen}
+        onClick={() => setIsOpen((open) => !open)}
       >
-        <i className={`bi ${form.isOpen ? "bi-dash-lg" : "bi-plus-lg"} me-1`} aria-hidden="true"></i>
+        <i className={`bi ${isOpen ? "bi-dash-lg" : "bi-plus-lg"} me-1`} aria-hidden="true"></i>
         Agregar videojuego
       </button>
 
@@ -59,7 +38,7 @@ export function ProductForm({ onAddProduct }) {
         id={FORM_ID}
         className="product-form card card-body mt-3"
         noValidate
-        hidden={!form.isOpen}
+        hidden={!isOpen}
         aria-labelledby="product-form-title"
         onSubmit={handleSubmit}
       >
@@ -71,10 +50,10 @@ export function ProductForm({ onAddProduct }) {
               type="text"
               id="product-name"
               name="name"
-              className={fieldClass("name")}
+              className={form.fieldClass("name")}
               required
               value={form.values.name}
-              onChange={handleChange}
+              onChange={form.handleChange}
             />
             <p className="invalid-feedback">Por favor ingresa el nombre del videojuego.</p>
           </div>
@@ -83,10 +62,10 @@ export function ProductForm({ onAddProduct }) {
             <select
               id="product-category"
               name="categorySlug"
-              className={fieldClass("categorySlug", "form-select")}
+              className={form.fieldClass("categorySlug", "form-select")}
               required
               value={form.values.categorySlug}
-              onChange={handleChange}
+              onChange={form.handleChange}
             >
               <option value="">Selecciona una categoría</option>
               {CATEGORIES.map((item) => (
@@ -103,13 +82,13 @@ export function ProductForm({ onAddProduct }) {
               type="number"
               id="product-price"
               name="price"
-              className={fieldClass("price")}
+              className={form.fieldClass("price")}
               min={1}
               step={1}
               inputMode="numeric"
               required
               value={form.values.price}
-              onChange={handleChange}
+              onChange={form.handleChange}
             />
             <p className="invalid-feedback">Ingresa un precio entero mayor a cero.</p>
           </div>
@@ -122,7 +101,7 @@ export function ProductForm({ onAddProduct }) {
               className="form-control"
               placeholder="https://…"
               value={form.values.image}
-              onChange={handleChange}
+              onChange={form.handleChange}
             />
           </div>
           <div className="col-12">
@@ -130,11 +109,11 @@ export function ProductForm({ onAddProduct }) {
             <textarea
               id="product-description"
               name="description"
-              className={fieldClass("description")}
+              className={form.fieldClass("description")}
               rows={2}
               required
               value={form.values.description}
-              onChange={handleChange}
+              onChange={form.handleChange}
             ></textarea>
             <p className="invalid-feedback">Por favor escribe una descripción.</p>
           </div>
@@ -142,7 +121,7 @@ export function ProductForm({ onAddProduct }) {
         <div className="mt-3">
           <button type="submit" className="btn btn-primary">Agregar al catálogo</button>
         </div>
-        <p id="product-form-status" className={`mt-3 mb-0${statusClass}`} role="status" aria-live="polite">
+        <p id="product-form-status" className={`mt-3 mb-0${form.statusClass}`} role="status" aria-live="polite">
           {form.status?.message}
         </p>
       </form>
