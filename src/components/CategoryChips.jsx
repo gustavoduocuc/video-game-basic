@@ -14,7 +14,8 @@ export function CategoryChips({ category, onSelectCategory }) {
               aria-pressed={isActive}
               onClick={() => {
                 onSelectCategory(item.slug);
-                scrollToSection("catalogo");
+                // WebKit cancela el scroll suave si el catálogo cambia de alto durante la animación.
+                requestAnimationFrame(() => scrollToSection("catalogo"));
               }}
             >
               {item.label}
