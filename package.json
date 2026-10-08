@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "GameVault: tienda de videojuegos con catálogo, filtros y carrito en React (Vite)",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
